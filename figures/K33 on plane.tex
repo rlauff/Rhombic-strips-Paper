@@ -1,0 +1,103 @@
+
+\newcommand{\tube}[1]{
+\begin{tikzpicture}[scale = 0.22]
+    \IfSubStr{#1}{a}{ \fill[Blue, draw] (0,3) circle (8pt); }{ \draw (0,3) circle (8pt); }
+    \IfSubStr{#1}{b}{ \fill[Blue, draw] (0,2) circle (8pt); }{ \draw (0,2) circle (8pt); }
+    \IfSubStr{#1}{c}{ \fill[Blue, draw] (0,1) circle (8pt); }{ \draw (0,1) circle (8pt); }
+    \IfSubStr{#1}{x}{ \fill[Blue, draw] (1,3) circle (8pt); }{ \draw (1,3) circle (8pt); }
+    \IfSubStr{#1}{y}{ \fill[Blue, draw] (1,2) circle (8pt); }{ \draw (1,2) circle (8pt); }
+    \IfSubStr{#1}{z}{ \fill[Blue, draw] (1,1) circle (8pt); }{ \draw (1,1) circle (8pt); }
+\end{tikzpicture}
+}
+\newcommand{\bound}{
+\begin{tikzpicture}[scale = 0.29, xscale = 1.3]
+    \fill[white] (0,1) -- (1,1) -- (1,3) -- (0,3) -- cycle;
+\end{tikzpicture}
+}
+\newcommand{\clrone}{Blue}
+\newcommand{\clrtwo}{red}
+
+
+
+\begin{tikzpicture}[scale = 1.35,yscale = 0.9,xscale = 0.55]
+
+\coordinate (a) at (3,0);
+\coordinate (b) at (19,0);
+\coordinate (c) at (17,0);
+\coordinate (x) at (20,0);
+\coordinate (y) at (18,0);
+\coordinate (z) at (13,0);
+\coordinate (ae) at (21,0);
+
+\coordinate (ax) at (3,1);
+\coordinate (ay) at (6,1);
+\coordinate (az) at (10,1);
+\coordinate (bz) at (13,1);
+\coordinate (cz) at (15,1);
+\coordinate (cx) at (17,1);
+\coordinate (cy) at (18,1);
+\coordinate (by) at (19,1);
+\coordinate (bx) at (20,1);
+\coordinate (axe) at (21,1);
+
+\coordinate (abx) at (3,2);
+\coordinate (acx) at (4,2);
+\coordinate (axy) at (5,2);
+\coordinate (acy) at (6,2);
+\coordinate (aby) at (7,2);
+\coordinate (ayz) at (8,2);
+\coordinate (acz) at (9,2);
+\coordinate (axz) at (10,2);
+\coordinate (abz) at (11,2);
+\coordinate (bxz) at (12,2);
+\coordinate (byz) at (13,2);
+\coordinate (bcz) at (14,2);
+\coordinate (cyz) at (15,2);
+\coordinate (cxz) at (16,2);
+\coordinate (bcx) at (17,2);
+\coordinate (cxy) at (18,2);
+\coordinate (bcy) at (19,2);
+\coordinate (bxy) at (20,2);
+\coordinate (abxe) at (21,2);
+
+\coordinate (abxy) at (3,3);
+\coordinate (abcx) at (4,3);
+\coordinate (acxy) at (5,3);
+\coordinate (abcy) at (6,3);
+\coordinate (abyz) at (7,3);
+\coordinate (acyz) at (8,3);
+\coordinate (abcz) at (9,3);
+\coordinate (acxz) at (10,3);
+\coordinate (axyz) at (11,3);
+\coordinate (abxz) at (12,3);
+\coordinate (bxyz) at (13,3);
+\coordinate (bcyz) at (14,3);
+\coordinate (cxyz) at (15,3);
+\coordinate (bcxz) at (16,3);
+\coordinate (bcxy) at (18,3);
+\coordinate (abxye) at (21,3);
+
+\coordinate (abcxy) at (3,4);
+\coordinate (abcyz) at (8,4);
+\coordinate (abcxz) at (10,4);
+\coordinate (acxyz) at (11,4);
+\coordinate (abxyz) at (12,4);
+\coordinate (bcxyz) at (15,4);
+\coordinate (abcxye) at (21,4);
+
+\foreach \a/\b in {abx/abxy,a/ax,a/ay,a/az,z/az,z/bz,z/cz,c/cz,c/cx,c/cy,y/cy,y/by,b/by,b/bx,x/bx,x/axe,ae/axe,ax/abx,ax/acx,ax/axy,ay/axy,ay/acy,ay/aby, ay/ayz,az/ayz,az/acz,az/axz,az/abz,bz/abz,bz/bxz,bz/byz,bz/bcz,cz/bcz,cz/cyz,cz/cxz,cx/cxz,cx/bcx,cx/cxy,cy/cxy,cy/bcy,by/bcy,by/bxy,bx/bxy,bx/abxe,axe/abxe,abx/abcx,acx/abcx,acx/acxy,axy/acxy,acy/acxy,acy/abcy,aby/abcy,aby/abyz,ayz/abyz,ayz/acyz,acz/acyz,acz/abcz,acz/acxz,axz/acxz,axz/axyz,axz/abxz,abz/abxz,bxz/abxz,bxz/bxyz,byz/bxyz,byz/bcyz,bcz/bcyz,cyz/bcyz,cyz/cxyz,cxz/cxyz,cxz/bcxz,bcx/bcxz,bcx/bcxy,cxy/bcxy,bcy/bcxy,bxy/bcxy,bxy/abxye,abxy/abcxy,abcx/abcxy,acxy/abcxy,abcy/abcxy,abcy/abcyz,abyz/abcyz,acyz/abcyz,abcz/abcyz,abcz/abcxz,acxz/abcxz,acxz/acxyz,axyz/acxyz,axyz/abxyz,abxz/abxyz,bxyz/abxyz,bxyz/bcxyz,bcyz/bcxyz,cxyz/bcxyz,bcxz/bcxyz,bcxy/bcxyz,bcxy/abcxye,abxe/abxye,abxye/abcxye}
+{\draw (\a) -- (\b);}
+
+\foreach\y in {0,...,4}{
+    \draw[thin,Orange] (2,\y) -- (22,\y);
+}
+
+\foreach\n in {a,b,c,x,y,z,ax,ay,az,bx,by,bz,cx,cy,cz,abx,aby,abz,acx,acy,acz,bcx,bcy,bcz,axy,bxy,cxy,axz,bxz,cxz,ayz,byz,cyz,abcx,abcy,abcz,abxy,abxz,abyz,acxy,acxz,acyz,bcxy,bcxz,bcyz,axyz,bxyz,cxyz,abcxy,abcxz,abcyz,abxyz,acxyz,bcxyz,ae,axe,abxe,abxye,abcxye}
+%{ \node[draw, fill=white] at (\n) {$\n$}; }
+{
+    \node at (\n) {\bound};
+    \node at (\n) {\tube{\n}};
+}
+
+
+\end{tikzpicture}

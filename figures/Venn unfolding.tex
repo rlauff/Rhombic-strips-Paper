@@ -1,0 +1,92 @@
+
+
+\begin{tikzpicture}[scale=.6]
+
+\coordinate (mid1) at (-90:1);
+\coordinate (mid2) at (30:1);
+\coordinate (mid3) at (150:1);
+
+\foreach\x in {1,2,3}
+{
+    % FIXED: Made the path name global and changed format to circL\x
+    \draw[thick, name path global=circL\x](mid\x) circle (1.5);
+}
+
+\coordinate (e) at (-2.5,0);
+
+\coordinate (1) at ($1.5*(mid1)$);
+\coordinate (2) at ($1.5*(mid2)$);
+\coordinate (3) at ($1.5*(mid3)$);
+
+\coordinate (12) at ($.9*(mid1) + .9*(mid2)$);
+\coordinate (13) at ($.9*(mid1) + .9*(mid3)$);
+\coordinate (23) at ($.9*(mid2) + .9*(mid3)$);
+
+\coordinate (123) at (0,0);
+
+% FIXED: Made the mask path global
+\filldraw[fill=white, fill opacity=1, draw=white, dashed, name path global=maskL] (3) -- ++(0,2) -- ++(-1.5,0) -- ++(0,-6) -- ++(4,0) -- ++(-1,2) -- (12) -- (123) -- (13) -- cycle;
+
+
+\begin{scope}[xscale=-1, xshift=4.5cm]
+    \coordinate (rmid1) at (-90:1);
+    \coordinate (rmid2) at (30:1);
+    \coordinate (rmid3) at (150:1);
+    
+    \foreach\x in {1,2,3}
+    {
+        % FIXED: Made the path name global and changed format to circR\x
+        \draw[thick, name path global=circR\x](rmid\x) circle (1.5);
+    }
+    
+    \coordinate (e) at (-2.5,0);
+    
+    \coordinate (1) at ($1.5*(rmid1)$);
+    \coordinate (2) at ($1.5*(rmid2)$);
+    \coordinate (3) at ($1.5*(rmid3)$);
+    
+    \coordinate (12) at ($.9*(rmid1) + .9*(rmid2)$);
+    \coordinate (13) at ($.9*(rmid1) + .9*(rmid3)$);
+    \coordinate (23) at ($.9*(rmid2) + .9*(rmid3)$);
+    
+    \coordinate (123) at (0,0);
+    
+    % FIXED: Made the mask path global (since it sits inside the \begin{scope} environment)
+    \filldraw[fill=white, fill opacity=1, draw=white, dashed, name path global=maskR] (3) -- ++(0,2) -- ++(-1.5,0) -- ++(0,-6) -- ++(4,0) -- ++(-1,2) -- (12) -- (123) -- (13) -- cycle;
+
+\end{scope}
+
+% Calculate all intersections automatically using the new global names
+\path [name intersections={of=circR3 and maskR, name=i3R}];
+\path [name intersections={of=circR1 and maskR, name=i1R}];
+\path [name intersections={of=circR2 and maskR, name=i2R}];
+
+\path [name intersections={of=circL3 and maskL, name=i3L}];
+\path [name intersections={of=circL1 and maskL, name=i1L}];
+\path [name intersections={of=circL2 and maskL, name=i2L}];
+
+% Map the automatic intersections to your original variable names
+\coordinate (A) at (i3R-1);
+\coordinate (B) at (i3R-2);
+\coordinate (C) at (i1R-1);
+\coordinate (D) at (i1R-2);
+\coordinate (F) at (i2R-1); 
+\coordinate (E) at (i2R-2);
+
+\coordinate (AA) at (i3L-1);
+\coordinate (BB) at (i3L-2);
+\coordinate (CC) at (i1L-1);
+\coordinate (DD) at (i1L-2);
+\coordinate (EE) at (i2L-2);
+\coordinate (FF) at (i2L-1);
+
+\draw[thick, Orange] (A) to[bend left=-20] (AA);
+\draw[thick, Orange] (B) to[bend left=-25] (BB);
+\draw[thick, Orange] (C) to[bend left=-20] (CC);
+\draw[thick, Orange] (D) to[bend left=-20] (DD);
+\draw[thick, Orange] (E) to[bend left=-20] (EE);
+\draw[thick, Orange] (F) to[bend left=-20] (FF);
+
+\draw[Green, thick] (0,0) circle (3cm);
+
+\end{tikzpicture}

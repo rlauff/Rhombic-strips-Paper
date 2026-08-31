@@ -1,0 +1,82 @@
+\begin{tikzpicture}[
+    x={(1cm, 0cm)},    % x-axis points purely right
+    y={(0cm, 0.35cm)}, % y-axis (depth) points up, but is squished for perspective
+    z={(0cm, 1cm)}     % z-axis (height) points purely straight up
+]
+
+    % --- 1. DEFINE CYLINDER PARAMETERS ---
+    \def\R{3} % Radius of the cylinder
+    \def\H{2} % Height of the cylinder (z-axis)
+
+    % --- 2. DRAW THE CYLINDER OUTLINE ---
+    
+    % Bottom base: Back half (hidden, dashed)
+    \begin{scope}[canvas is xy plane at z=-1]
+        \draw[dashed, color=gray!80, thick] (\R,0) arc (0:180:\R);
+        
+        % Bottom base: Front half (visible, solid)
+        \draw[thick] (\R,0) arc (0:-180:\R);
+        \node at (0,0) {$R_-\times\{0\}$};
+    \end{scope}
+
+    % Vertical side edges
+    \draw[thick] (-\R, 0, -1) -- (-\R, 0, \H+4);
+    \draw[thick] (\R, 0, -1) -- (\R, 0, \H+4);
+
+    % Top base (fully visible)
+    \begin{scope}[canvas is xy plane at z=\H+4]
+        \draw[thick, fill=white, fill opacity=0.7] (0,0) circle[radius=\R];
+        \node at (0,0) {$R^-\times\{b\}$};
+    \end{scope}
+    
+    % --- 3. CALCULATE AND DEFINE VERTICES ---
+    % Loop through index, angle, and height offset
+    % Angles span 0 to 315 degrees (8 points)
+    \foreach \i/\a/\h in {
+        0/0/0,
+        1/45/1,
+        2/90/2,
+        3/135/1,
+        4/180/2,
+        5/225/3,
+        6/270/2,
+        7/315/1
+    } {
+        % Bottom vertices (B0 to B7)
+        \coordinate (B\i) at (xyz cylindrical cs: radius=\R, angle=\a+5, z=\h);
+        
+        % Top vertices (T0 to T7) - offset by \H
+        \coordinate (T\i) at (xyz cylindrical cs: radius=\R, angle=\a+5, z={\H+\h});
+        
+        \coordinate (M\i) at (xyz cylindrical cs: radius=\R, angle=\a+5, z={\H/2+\h});
+    }
+
+    \foreach\L in {T,B}{
+        \draw[dashed, color=Orange!80, thick] (\L0) -- (\L1) -- (\L2) -- (\L3) -- (\L4);
+        \draw[thick, Orange] (\L4) -- (\L5) -- (\L6) -- (\L7) -- (\L0);
+    }
+\def\L{M}
+    \draw[dashed] (\L0) -- (\L1) -- (\L2) -- (\L3) -- (\L4);
+    \draw[] (\L4) -- (\L5) -- (\L6) -- (\L7) -- (\L0);
+
+
+   
+
+    \foreach\i in {1,2,3}{
+        \draw[dashed] (B\i) -- (T\i);
+    }
+    \foreach\i in {0,4,5,6,7}{
+        \draw (B\i) -- (T\i);
+    }
+
+
+
+
+     \foreach\L in {T,M,B}{
+    \foreach \i in {1,2,3} {
+        \filldraw[fill=white, draw=gray!80, thick] (\L\i) circle (2pt);
+    }
+    \foreach \i in {0,4,5,6,7} {
+        \filldraw[fill=white, draw=black, thick] (\L\i) circle (2pt);
+    }}
+\end{tikzpicture}
