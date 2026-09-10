@@ -1,0 +1,54 @@
+\begin{tikzpicture}[yscale = 0.35, xscale=0.4, every node/.style={font=\scriptsize}]
+\coordinate (12) at (2,2);
+\coordinate (23) at (4,2);
+\coordinate (13) at (6,2);
+\coordinate (34) at (8,2);
+\coordinate (24) at (12,2);
+\coordinate (14) at (14,2);
+\coordinate (45) at (16,2);
+\coordinate (35) at (24,2);
+\coordinate (25) at (28,2);
+\coordinate (15) at (30,2);
+
+\coordinate (1) at (0,0);
+\coordinate (2) at (2,0);
+\coordinate (3) at (6,0);
+\coordinate (4) at (14,0);
+\coordinate (5) at (30,0);
+
+\coordinate (123) at (4,4);
+\coordinate (134) at (8,4);
+\coordinate (234) at (10,4);
+\coordinate (124) at (12,4);
+\coordinate (145) at (16,4);
+\coordinate (245) at (18,4);
+\coordinate (345) at (22,4);
+\coordinate (135) at (24,4);
+\coordinate (235) at (26,4);
+\coordinate (125) at (28,4);
+
+\coordinate (1234) at (10,6);
+\coordinate (1245) at (18,6);
+\coordinate (2345) at (20,6);
+\coordinate (1345) at (22,6);
+\coordinate (1235) at (26,6);
+
+\coordinate (12345) at (20,8);
+\coordinate (e) at (0,-2);
+
+\foreach \a/\b in {1/12,2/12,2/23,3/23,3/13,3/34,4/34,4/24,4/14,4/45,5/45,5/35,5/25,5/15,12/123,23/123,13/123,13/134,34/134,34/234,24/234,24/124,14/124,45/145,45/245,45/345,35/345,35/135,35/235,25/125,15/125,123/1234,134/1234,234/1234,124/1234,124/1245,145/1245,245/1245,245/2345,345/2345,345/1345,135/1345,135/1235,235/1235,125/1235, 14/145,125/1235,25/235, 12345/1234, 12345/1235, 12345/1245, 12345/1345, 12345/2345, e/1,e/2,e/3,e/4,e/5}
+{  \draw (\a) -- (\b);  }
+
+\draw[Blue, very thick] (e) -- (1) -- (12) -- (2) -- (23) -- (123) -- (13) -- (3) -- (34) -- (134) -- (1234) -- (234) -- (24) -- (124) -- (14) -- (4) -- (45) -- (145) -- (1245) -- (245) -- (2345) -- (12345) -- (1345) -- (345) -- (35) -- (135) -- (1235) -- (235) -- (25) -- (125) -- (15) -- (5);
+
+\foreach\n in {1,2,3,4,5,12,13,14,15,23,24,25,34,35,45,123,124,125,134,135,145,234,235,245,345,1234,1235,1345,1245,2345}
+{ \node[draw, fill = white] at (\n) {$\n$}; }
+
+\node[draw=gray, fill=white] at (12345) {$12345$};
+\node[draw=gray, fill=white] at (e) {$\emptyset$};
+
+\draw[very thick, dashed] (-1,-3) -- (-1,7) -- (14.9,7) -- (14.9,-3) -- cycle;
+
+\draw[very thick, dashed] (15.1,-1) -- (15.1,9) -- (31,9) -- (31,-1) -- cycle;
+
+\end{tikzpicture}

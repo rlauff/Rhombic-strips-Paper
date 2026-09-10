@@ -1,0 +1,45 @@
+
+\def\lensangle{40}
+\def\xstep{2.5cm}
+\def\ystep{1.5cm}
+\def\numlines{4}
+
+\newcommand{\lens}[2]{
+\begin{scope}[xshift=#1*\xstep, yshift=#2*\ystep]
+    \node[circle, fill, inner sep=2pt] (lenstop#1#2) at (0,2) {};
+    \node[circle, fill, inner sep=2pt] (lensbottom#1#2) at (0,-2) {};
+    
+    \filldraw[draw=black,fill=white] 
+        (lenstop#1#2.center) to[bend left=\lensangle] (lensbottom#1#2.center) 
+        to[bend left=\lensangle] (lenstop#1#2.center) -- cycle;
+        
+    \pgfmathtruncatemacro\sign{mod(#1,2)}
+    \if\sign 0{\draw[-{Latex[length=2.5mm, width=1.5mm]}] (-0.3,0) -- (0.3,0);}\else{\draw[{Latex[length=2.5mm, width=1.5mm]}-] (-0.3,0) -- (0.3,0);}\fi
+\end{scope}
+}
+
+
+    \begin{tikzpicture}[scale=0.5]
+
+        \pgfmathsetmacro\linestep{1/\numlines}
+    
+        \foreach\x/\y in {0/0,1/1,2/2,3/3,4/4,5/5}
+        {
+            \lens{\x}{\y}
+            \node at (lensbottom\x\y) [below=5mm] {\scriptsize $R\times\{\x\}$};
+        }
+        \begin{scope}[on background layer]
+            \foreach \x/\y [
+                remember=\x as \oldx (initially 0), 
+                remember=\y as \oldy (initially 0)
+            ] in {0/0,1/1,2/2,3/3,4/4,5/5}
+            {
+                \foreach\i in {0,0.25,0.5,0.75,1}
+                {
+                    \draw ($(lenstop\x\y) !\i! (lensbottom\x\y)$) -- ($(lenstop\oldx\oldy) !\i! (lensbottom\oldx\oldy)$);
+                }
+            }
+        \end{scope}
+        
+    \end{tikzpicture}
+    

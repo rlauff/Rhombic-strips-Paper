@@ -1,0 +1,15 @@
+
+--Results section moved up--:   Paper Structure and Merit (All Reviewers) All reviewers rightly pointed out that the formal statements of our results appear too late in the manuscript. We completely agree that this must be changed. We recognize that our current layout obscured the broader impact of the paper, causing its merit to be understated. While rhombic strips are a fairly new concept, in this work they are used to answer almost all cases of a 30-year-old open question by Ruskey and Savage concerning fundamental objects in combinatorics. Furthermore, they are essential to our result on tree-associahedra, which extends the findings of a previous SODA publication and represents the most general result regarding facet-Hamiltonian cycles in graph associahedra to date. We believe this is a substantial contribution to the field.
+
+--Nothing changed--:    Novelty of the Constructions (Reviewer B) Reviewer B correctly notes that our constructions abstract the techniques used by Behrooznia et al. However, extending these techniques from the hypercube to products of general graded posets—and combining them in a novel way—is exactly what enables our new applications.
+
+Clarifications on Proofs (Reviewer A) Reviewer A raised concerns regarding two proofs. We have carefully reviewed them and confirm they hold as originally stated, though we agree that a rewording is needed for clarity:
+--Thm statement adapted, sentence about "cyclic case" in proof deleted--:   Unfolding (Theorem 3): We will update the theorem statements to explicitly clarify that unfolding was never claimed to work for cyclic rhombic strips. The "cyclic case" mentioned in the proof specifically refers to the case (P\times C_1), which is handled correctly. The wording here is clearly confusing, and we will change it.
+--The proof is good as is, it clearly describes exactly which edges should be added--:    Lemma 11: Regarding the concern about the (a\times b\times 2) minor, we note that only the inside chords of the Hamilton cycle are added, and only in the bottom- and topmost copies. Therefore, the resulting graph does not contain (a\times b\times 2) as a minor. As illustrated in Figure 21, once blown up, it is a planar rectangulation of a sphere.
+
+Lattice Condition and SJT Citation (Reviewer C)
+
+--Added two sentences explaining this--:    Lattice condition: Reviewer C asked why (R) must be a lattice in the definition of rhombic strips. Without this condition, the outer face may touch too many elements of (R) (for example, a strip without any edges would then incorrectly be considered a valid rhombic strip). We found this to be the simplest condition to restrict this, and we will explicitly clarify this reasoning in the text.
+    
+--Added ref to the abstract and proper citation to the corollary and text body where this appears--:    SJT Restriction (Corollary 6): We confirm this is a known result, and we will absolutely add the missing citation (Effler and Ruskey, 2003).
+

@@ -1,0 +1,137 @@
+% --- GLOBAL VARIABLES ---
+\newcommand{\baseradius}{5}
+\newcommand{\tubeborder}{.8}
+
+\newcommand{\tube}[2]{
+\begin{scope}[on background layer]
+    
+    % Calculate the dynamic radius based on the nesting integer #2
+    \pgfmathsetmacro{\currentradius}{\baseradius + (#2 * 2)}
+    
+    % STEP 1: Draw the outer Blue joints 
+    % (Uncommented to ensure 1-element tubes are drawn!)
+    \foreach\v in {#1}{
+        \fill[Blue] (\v) circle (\currentradius pt);
+    }
+    
+    % STEP 2: Filldraw the thick outer Blue path
+    \filldraw[line width = 2*\currentradius pt, Blue, line join=round] \foreach\v [count=\c] in {#1}{
+        \ifnum\c=1 
+            (\v)
+        \else 
+            -- (\v)
+        \fi
+    } -- cycle;
+
+    % STEP 3: Draw the inner white joints 
+    \foreach\v in {#1}{
+        \fill[white] (\v) circle (\currentradius pt - \tubeborder pt);
+    }
+    
+    % STEP 4: Filldraw the inner white path
+    \filldraw[line width = 2*\currentradius pt - 2*\tubeborder pt, white, line join=round] \foreach\v [count=\c] in {#1}{
+        \ifnum\c=1 
+            (\v)
+        \else 
+            -- (\v)
+        \fi
+    } -- cycle;
+    
+\end{scope}
+}
+
+\newcommand{\cube}{
+    \foreach\x in {0,1}{
+        \foreach\y in {0,1}{
+            \foreach\z in {0,1}{
+                \node[fill, circle, inner sep=2pt] (\x\y\z) at (\x+.5*\z,\y+.5*\z) {};
+            }
+        }
+    }
+    \foreach\x in {0}{
+        \foreach\y in {0,1}{
+            \foreach\z in {0,1}{
+                \draw (0\y\z) -- (1\y\z);
+            }
+        }
+    }
+    \foreach\x in {0,1}{
+        \foreach\y in {0}{
+            \foreach\z in {0,1}{
+                \draw (\x0\z) -- (\x1\z);
+            }
+        }
+    }
+    \foreach\x in {0,1}{
+        \foreach\y in {0,1}{
+            \foreach\z in {0}{
+                \draw (\x\y0) -- (\x\y1);
+            }
+        }
+    }
+}
+
+\begin{tikzpicture}
+    \foreach\x in {0,1,2}{
+        \node[fill, circle, inner sep=2pt] (a\x) at (\x,0) {};
+        \node[fill, circle, inner sep=2pt] (b\x) at (\x,1) {};
+        \draw (a\x) -- (b\x);
+    }
+
+    \foreach\x in {0,1,2}{
+        \node[fill, circle, inner sep=2pt] (aa\x) at (\x+4,0) {};
+        \node[fill, circle, inner sep=2pt] (bb\x) at (\x+4,1) {};
+        \draw (aa\x) -- (bb\x);
+    }
+
+    \foreach\x in {0,1,2}{
+        \node[fill, circle, inner sep=2pt] (aaa\x) at (\x+8,0) {};
+        \node[fill, circle, inner sep=2pt] (bbb\x) at (\x+8,1) {};
+        \draw (aaa\x) -- (bbb\x);
+    }
+
+    \foreach\x in {0,1,2}{
+        \node[fill, circle, inner sep=2pt] (aaaa\x) at (\x+12,0) {};
+        \node[fill, circle, inner sep=2pt] (bbbb\x) at (\x+12,1) {};
+        \draw (aaaa\x) -- (bbbb\x);
+    }
+
+
+    \tube{a0}{1}
+    \tube{a1}{1}
+    \tube{a2}{1}
+    
+    \tube{bb0}{1}
+    \tube{aa1}{1}
+    \tube{aa2}{1}
+
+    \tube{bbb0}{1}
+    \tube{bbb1}{1}
+    \tube{aaa2}{1}
+
+    \tube{bbbb0}{1}
+    \tube{bbbb1}{1}
+    \tube{bbbb2}{1}
+
+    \begin{scope}[xshift=.5cm, yshift=2cm]
+        \cube
+    \end{scope}
+    \tube{000}{1}
+
+    \begin{scope}[xshift=4.5cm, yshift=2cm]
+        \cube
+    \end{scope}
+    \tube{100}{1}
+
+    \begin{scope}[xshift=8.5cm, yshift=2cm]
+        \cube
+    \end{scope}
+    \tube{110}{1}
+
+    \begin{scope}[xshift=12.5cm, yshift=2cm]
+        \cube
+    \end{scope}
+    \tube{111}{1}
+
+    
+\end{tikzpicture}
