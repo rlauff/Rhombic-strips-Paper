@@ -1,0 +1,151 @@
+
+    \begin{tikzpicture}[
+        x={(1cm, 0cm)},
+        y={(0cm, 0.55cm)},
+        z={(0cm, 1cm)}
+    ]
+\foreach\z/\r in {0/4,2/4.9,4/4.9,6/4}{
+    \begin{scope}[canvas is xy plane at z=\z]
+        \draw[Orange] (0,0) circle[radius=\r];
+    \end{scope}
+}
+
+\coordinate (empty) at (0,0,-2);
+\coordinate (xxxx) at (0,0,8);
+
+\def\anglestep{11}
+
+    \begin{scope}[canvas is xy plane at z=0]
+        \coordinate (0000) at (0*\anglestep:4);
+        \coordinate (0100) at (1.50*\anglestep:4);
+        \coordinate (1100) at (3.50*\anglestep:4);
+        \coordinate (1000) at (6.00*\anglestep:4);
+        \coordinate (1010) at (8.50*\anglestep:4);
+        \coordinate (1110) at (11.00*\anglestep:4);
+        \coordinate (1111) at (13.50*\anglestep:4);
+        \coordinate (1011) at (16.00*\anglestep:4);
+        \coordinate (1001) at (18.00*\anglestep:4);
+        \coordinate (1101) at (19.50*\anglestep:4);
+        \coordinate (0101) at (21.00*\anglestep:4);
+        \coordinate (0001) at (23.00*\anglestep:4);
+        \coordinate (0011) at (25.00*\anglestep:4);
+        \coordinate (0111) at (27.00*\anglestep:4);
+        \coordinate (0110) at (29.00*\anglestep:4);
+        \coordinate (0010) at (30.50*\anglestep:4);
+    \end{scope}
+
+\begin{scope}[canvas is xy plane at z=2]
+    \coordinate (x000) at (0*\anglestep:4.9);
+    \coordinate (0x00) at (1*\anglestep:4.9);
+    \coordinate (x100) at (2*\anglestep:4.9);
+    \coordinate (11x0) at (3*\anglestep:4.9);
+    \coordinate (110x) at (4*\anglestep:4.9);
+    \coordinate (1x00) at (5*\anglestep:4.9);
+    \coordinate (100x) at (6*\anglestep:4.9);
+    \coordinate (10x0) at (7*\anglestep:4.9);
+    \coordinate (101x) at (8*\anglestep:4.9);
+    \coordinate (x010) at (9*\anglestep:4.9);
+    \coordinate (1x10) at (10*\anglestep:4.9);
+    \coordinate (x110) at (11*\anglestep:4.9);
+    \coordinate (111x) at (12*\anglestep:4.9);
+    \coordinate (x111) at (13*\anglestep:4.9);
+    \coordinate (11x1) at (14*\anglestep:4.9);
+    \coordinate (1x11) at (15*\anglestep:4.9);
+    \coordinate (x011) at (16*\anglestep:4.9);
+    \coordinate (10x1) at (17*\anglestep:4.9);
+    \coordinate (x001) at (18*\anglestep:4.9);
+    \coordinate (1x01) at (19*\anglestep:4.9);
+    \coordinate (x101) at (20*\anglestep:4.9);
+    \coordinate (010x) at (21*\anglestep:4.9);
+    \coordinate (0x01) at (22*\anglestep:4.9);
+    \coordinate (000x) at (23*\anglestep:4.9);
+    \coordinate (00x1) at (24*\anglestep:4.9);
+    \coordinate (001x) at (25*\anglestep:4.9);
+    \coordinate (0x11) at (26*\anglestep:4.9);
+    \coordinate (01x1) at (27*\anglestep:4.9);
+    \coordinate (011x) at (28*\anglestep:4.9);
+    \coordinate (01x0) at (29*\anglestep:4.9);
+    \coordinate (0x10) at (30*\anglestep:4.9);
+    \coordinate (00x0) at (31*\anglestep:4.9);
+\end{scope}
+
+\begin{scope}[canvas is xy plane at z=4]
+    \coordinate (xx00) at (0*\anglestep:4.9);
+    \coordinate (x1x0) at (2*\anglestep:4.9);
+    \coordinate (1xx0) at (3.0*\anglestep:4.9);
+    \coordinate (11xx) at (4*\anglestep:4.9);
+    \coordinate (1x0x) at (5.0*\anglestep:4.9);
+    \coordinate (10xx) at (7.0*\anglestep:4.9);
+    \coordinate (1x1x) at (8.0*\anglestep:4.9);
+    \coordinate (x01x) at (9*\anglestep:4.9);
+    \coordinate (xx10) at (10.0*\anglestep:4.9);
+    \coordinate (x11x) at (12.0*\anglestep:4.9);
+    \coordinate (x1x1) at (13.5*\anglestep:4.9);
+    \coordinate (1xx1) at (14.5*\anglestep:4.9);
+    \coordinate (xx11) at (15.5*\anglestep:4.9);
+    \coordinate (x0x1) at (17.0*\anglestep:4.9);
+    \coordinate (xx01) at (19.0*\anglestep:4.9);
+    \coordinate (x10x) at (20.5*\anglestep:4.9);
+    \coordinate (0x0x) at (22.0*\anglestep:4.9);
+    \coordinate (x00x) at (23.0*\anglestep:4.9);
+    \coordinate (00xx) at (24.0*\anglestep:4.9);
+    \coordinate (0x1x) at (25.5*\anglestep:4.9);
+    \coordinate (0xx1) at (26.5*\anglestep:4.9);
+    \coordinate (01xx) at (28.0*\anglestep:4.9);
+    \coordinate (0xx0) at (30.0*\anglestep:4.9);
+    \coordinate (x0x0) at (31*\anglestep:4.9);
+    \coordinate (xx00e) at (32*\anglestep:4.9);
+\end{scope}
+
+\begin{scope}[canvas is xy plane at z=6]
+    \coordinate (xxx0) at (0*\anglestep:4);
+    \coordinate (1xxx) at (5.5*\anglestep:4);
+    \coordinate (xx1x) at (10.0*\anglestep:4);
+    \coordinate (x1xx) at (12.75*\anglestep:4);
+    \coordinate (xxx1) at (16.25*\anglestep:4);
+    \coordinate (xx0x) at (21.0*\anglestep:4);
+    \coordinate (x0xx) at (23.5*\anglestep:4);
+    \coordinate (0xxx) at (27.0*\anglestep:4);
+\end{scope}
+
+
+
+
+\foreach \a/\b in {x000/xx00, xx00/xxx0, 0000/0x00, 0x00/xx00, x100/xx00, x1x0/xxx0, 1xx0/xxx0, 1110/1x10, 1011/x011, 01x0/0xx0, 1001/10x1, 000x/0x0x, 00xx/0xxx, 0111/0x11, 101x/x01x, x010/xx10, 1000/1x00, 0011/00x1, 0011/001x, x00x/xx0x, 0x1x/0xxx, 1010/10x0, 1xx0/1xxx, 1xx1/xxx1, x001/x0x1, 00x0/x0x0, x010/x01x, 001x/0x1x, 110x/11xx, 1101/1x01, 1110/x110, 101x/10xx, 11x0/x1x0, 0x10/0xx0, 1001/1x01, 0101/010x, x101/xx01, x101/x10x, x001/xx01, 0001/000x, 00xx/x0xx, 101x/1x1x, x10x/xx0x, x11x/x1xx, x1x1/xxx1, 001x/00xx, 000x/00xx, 0110/0x10, 1x11/xx11, 1110/111x, xx10/xx1x, 1000/100x, 0xx0/0xxx, x01x/xx1x, 0001/0x01, 011x/01xx, 1111/x111, 010x/0x0x, 1000/10x0, 0101/0x01, x111/x11x, 0111/011x, 1100/x100, 110x/1x0x, 00x1/00xx, 1101/x101, 01x1/01xx, 11x1/x1x1, 11x0/1xx0, x011/xx11, 111x/x11x, x11x/xx1x, x011/x0x1, x0x1/xxx1, 0x11/0x1x, 01xx/0xxx, 1111/111x, xx01/xx0x, 10xx/1xxx, 1010/101x, 0000/x000, 0x0x/xx0x, 0001/00x1, 010x/x10x, 0010/00x0, 100x/1x0x, 0111/01x1, xx11/xxx1, xx01/xxx1, 1011/10x1, 00x0/0xx0, 1x1x/xx1x, 01x1/0xx1, 1x1x/1xxx, 0xx1/0xxx, x110/xx10, 1010/1x10, 1x10/xx10, 11x1/1xx1, 1x11/1xx1, 1111/1x11, 11x0/11xx, 10x0/10xx, 0101/x101, 1x01/xx01, 1100/1x00, 0011/0x11, 1001/x001, 0110/011x, 11xx/1xxx, 1x0x/1xxx, 0100/0x00, 0x11/0xx1, 0x01/0x0x, 0010/0x10, 1011/1x11, 100x/10xx, x00x/x0xx, 10x1/x0x1, 1100/110x, x100/x1x0, 1010/x010, 000x/x00x, x110/x11x, x111/x1x1, 0110/01x0, 1x00/1x0x, 1111/11x1, 1100/11x0, x1x1/x1xx, 01x0/01xx, 0100/x100, 0000/00x0, 0000/x000, x000/xx00, xx00/xxx0, 0xx0/xxx0, x0x0/xxx0,x000/x0x0,xxx0/xxxx,xx0x/xxxx,x0xx/xxxx,0xxx/xxxx,xxx1/xxxx,xx1x/xxxx,x1xx/xxxx,1xxx/xxxx}
+{  \draw[thin, gray] (\a) -- (\b);  }
+\foreach\a in {0,1}{
+    \foreach\b in {0,1}{
+        \foreach\c in {0,1}{
+            \foreach\d in {0,1}{
+                \draw[thin, gray] (empty) -- (\a\b\c\d);
+            }
+        }
+    }
+}
+
+\foreach\a/\b in {x000/xx00, xx00/xxx0, 01x0/0xx0, 1001/10x1, 000x/0x0x, 00xx/0xxx, 0111/0x11,
+    0011/00x1, 0011/001x, x00x/xx0x, 0x1x/0xxx, x001/x0x1, 00x0/x0x0, 001x/0x1x,
+    1101/1x01, 0x10/0xx0, 1001/1x01, 0101/010x, x101/xx01, x101/x10x, x001/xx01,
+    0001/000x, 00xx/x0xx, x10x/xx0x, 001x/00xx, 000x/00xx, 0110/0x10, 0xx0/0xxx,
+    0001/0x01, 011x/01xx, 010x/0x0x, 0101/0x01, 0111/011x, 00x1/00xx, 1101/x101,
+    01x1/01xx, 0x11/0x1x, 01xx/0xxx, xx01/xx0x, 0000/x000, 0x0x/xx0x, 0001/00x1,
+    010x/x10x, 0010/00x0, 0111/01x1, 00x0/0xx0, 01x1/0xx1, 0xx1/0xxx, 0101/x101,
+    1x01/xx01, 0011/0x11, 1001/x001, 0110/011x, 0x11/0xx1, 0x01/0x0x, 0010/0x10,
+    x00x/x0xx, 10x1/x0x1, 000x/x00x, 0110/01x0, 01x0/01xx, 0000/00x0, 0xx0/xxx0,
+    x0x0/xxx0, x000/x0x0,xxx0/xxxx,xx0x/xxxx,x0xx/xxxx,0xxx/xxxx,xxx1/xxxx,xx1x/xxxx,x1xx/xxxx,1xxx/xxxx,xxx1/xx11,xxx1/x0x1,xxx1/xx01}
+    {\draw[thick] (\a) -- (\b);}
+
+\foreach\a in {0,1,x}{
+    \foreach\b in {0,1,x}{
+        \foreach\c in {0,1,x}{
+            \foreach\d in {0,1,x}{
+                \filldraw[fill=white] (\a\b\c\d) circle (2pt);
+                %\node[fill=white, draw, inner sep=1pt] at (\a\b\c\d) {\tiny \a\b\c\d};
+            }
+        }
+    }
+}
+\filldraw[fill=white] (empty) circle (2pt);
+\filldraw[fill=white] (xxxx) circle (2pt);
+        
+    \end{tikzpicture}

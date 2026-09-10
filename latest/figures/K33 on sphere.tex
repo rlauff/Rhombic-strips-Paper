@@ -1,0 +1,129 @@
+
+% Custom tube command
+\newcommand{\tube}[1]{%
+\begin{tikzpicture}[scale = 0.15]
+    \IfSubStr{#1}{a}{ \fill[Blue, draw] (0,4.5) circle (8pt); }{ \draw (0,4.5) circle (8pt); }
+    \IfSubStr{#1}{b}{ \fill[Blue, draw] (0,3) circle (8pt); }{ \draw (0,3) circle (8pt); }
+    \IfSubStr{#1}{c}{ \fill[Blue, draw] (0,1.5) circle (8pt); }{ \draw (0,1.5) circle (8pt); }
+    \IfSubStr{#1}{x}{ \fill[Blue, draw] (1,4.5) circle (8pt); }{ \draw (1,4.5) circle (8pt); }
+    \IfSubStr{#1}{y}{ \fill[Blue, draw] (1,3) circle (8pt); }{ \draw (1,3) circle (8pt); }
+    \IfSubStr{#1}{z}{ \fill[Blue, draw] (1,1.5) circle (8pt); }{ \draw (1,1.5) circle (8pt); }
+\end{tikzpicture}%
+}
+
+\begin{tikzpicture}[
+    x={(1cm, 0cm)},
+    y={(0cm, 0.5cm)},
+    z={(0cm, 1cm)},
+    scale=.8
+]
+
+\def\anglestep{20} % 18 steps * 20 degrees = 360 degree wrap-around
+
+% 1. DRAW BACKGROUND SPHERICAL REFERENCE CIRCLES
+\foreach \z/\r in {0/4.47, 2/5.66, 4/6, 6/5.66, 8/4.47}{
+    \begin{scope}[canvas is xy plane at z=\z]
+        \draw[Orange, thin] (0,0) circle[radius=\r];
+    \end{scope}
+}
+
+% 2. DEFINE POLES
+\coordinate (empty) at (0,0,-2);
+\coordinate (abcxyz) at (0,0,10);
+
+% 3. DEFINE EVENLY SPACED COORDINATES 
+\begin{scope}[canvas is xy plane at z=0]
+    % 6 nodes (spaced by 3)
+    \foreach \name/\ax in {a/0, z/3, c/5.5, y/9, b/12, x/15} 
+        \coordinate (\name) at (\ax*\anglestep:4.47);
+\end{scope}
+
+\begin{scope}[canvas is xy plane at z=2]
+    % 9 nodes (spaced by 2)
+    \foreach \name/\ax in {ay/0, az/2, bz/4.2, cz/6, cx/9.2, cy/10, by/12, bx/14, ax/15.5} 
+        \coordinate (\name) at (\ax*\anglestep:5.66);
+\end{scope}
+
+\begin{scope}[canvas is xy plane at z=4]
+    % 18 nodes (spaced by 1)
+    \foreach \name/\ax in {acy/0, aby/1, ayz/2.2, acz/3, axz/4, abz/5.5, bxz/6, byz/7, bcz/8.1, cyz/9, cxz/10, bcx/11, cxy/12, bcy/13, bxy/14, abx/15, acx/16, axy/17} 
+        \coordinate (\name) at (\ax*\anglestep:6);
+\end{scope}
+
+\begin{scope}[canvas is xy plane at z=6]
+    % 15 nodes (spaced by 1.2)
+    \foreach \name/\ax in {abcy/0, abyz/1.2, acyz/2.4, abcz/3.6, acxz/5.2, axyz/6.0, abxz/7.2, bxyz/8.4, bcyz/10.1, cxyz/10.8, bcxz/12.0, bcxy/13.2, abxy/14.4, abcx/15.6, acxy/16.8} 
+        \coordinate (\name) at (\ax*\anglestep:5.66);
+\end{scope}
+
+\begin{scope}[canvas is xy plane at z=8]
+    % 6 nodes (spaced by 3)
+    \foreach \name/\ax in {abcyz/2, abcxz/5, acxyz/8, abxyz/10, bcxyz/12.5, abcxy/15} 
+        \coordinate (\name) at (\ax*\anglestep:4.47);
+\end{scope}
+
+
+% 4. PRECOMPUTED EDGE LISTS 
+\def\backedges{%
+    empty/a, empty/c, empty/z,
+    z/az, z/bz, z/cz, a/az, c/cz,
+    az/ayz, az/acz, az/axz, az/abz,
+    bz/abz, bz/bxz, bz/byz, bz/bcz,
+    cz/bcz, cz/cyz,
+    ay/aby, ay/ayz,
+    ayz/abyz, ayz/acyz,
+    acz/acyz, acz/abcz, acz/acxz,
+    axz/acxz, axz/axyz, axz/abxz,
+    abz/abxz, bxz/abxz, bxz/bxyz,
+    byz/bxyz, 
+    aby/abyz, abyz/abcyz,
+    acyz/abcyz, abcz/abcyz, abcz/abcxz,
+    axyz/abxyz,byz/bcyz,
+    empty/b, empty/x, empty/y,
+    acxz/abcxz, acxz/acxyz, axyz/acxyz,c/cx, c/cy,cz/cxz,
+    abcy/abcyz%
+}
+
+\def\frontedges{%
+    abcxyz/acxyz, abcxyz/abxyz, abcxyz/bcxyz, abcxyz/abcxy,abcxyz/abcyz, abcxyz/abcxz,
+    a/ax, a/ay, bcz/bcyz,
+    y/cy, y/by, b/by, b/bx, x/bx, x/ax,
+      aby/abcy,
+    ax/abx, ax/acx, ax/axy,
+    ay/axy, ay/acy,
+    cy/cxy, cy/bcy,
+    by/bcy, by/bxy,
+    bx/bxy, bx/abx,
+    cyz/bcyz, cyz/cxyz,
+    cxz/cxyz, cxz/bcxz,
+    bcx/bcxz, bcx/bcxy,
+    cxy/bcxy, bcy/bcxy, bxy/bcxy, bxy/abxy,
+    abx/abxy, abx/abcx,
+    acx/abcx, acx/acxy,
+    axy/acxy, acy/acxy, acy/abcy,
+    abxz/abxyz, bxyz/abxyz, bxyz/bcxyz,
+    bcyz/bcxyz, cxyz/bcxyz, bcxz/bcxyz,
+    bcxy/bcxyz, bcxy/abcxy,cx/cxz, cx/bcx, cx/cxy,
+    abxy/abcxy, abcx/abcxy, acxy/abcxy, abcy/abcxy%
+}
+
+% Draw Back Edges (Thin, Gray)
+\foreach \u/\v in \backedges {
+    \draw[thin, gray] (\u) -- (\v);
+}
+
+% Draw Front Edges (Thick, Black)
+\foreach \u/\v in \frontedges {
+    \draw[thick, black] (\u) -- (\v);
+}
+
+% 5. PLACE ALL NODES ON TOP (Removes need for manual redraws later)
+\foreach \n in {a,b,c,x,y,z,ax,ay,az,bx,by,bz,cx,cy,cz,abx,aby,abz,acx,acy,acz,bcx,bcy,bcz,axy,bxy,cxy,axz,bxz,cxz,ayz,byz,cyz,abcx,abcy,abcz,abxy,abxz,abyz,acxy,acxz,acyz,bcxy,bcxz,bcyz,axyz,bxyz,cxyz,abcxy,abcxz,abcyz,abxyz,acxyz,bcxyz} {
+    \node[fill=white, circle, inner sep=0.5pt] at (\n) {\tube{\n}};
+}
+
+% Place Poles
+\node[fill=white, circle, inner sep=0.5pt] at (empty) {\tube{}};
+\node[fill=white, circle, inner sep=0.5pt] at (abcxyz) {\tube{abcxyz}};
+
+\end{tikzpicture}

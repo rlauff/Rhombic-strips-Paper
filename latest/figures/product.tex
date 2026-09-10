@@ -1,0 +1,119 @@
+
+\def\lensangle{40}
+\def\xstep{2.5cm}
+\def\ystep{1.5cm}
+\def\scew{5}
+\def\height{3}
+
+\newcommand{\lens}[2]{
+\begin{scope}[xshift=#1*\xstep, yshift=#2*\ystep]
+    
+    \filldraw[draw=black,fill=white] 
+        (\scew,\height) to[bend left=\lensangle] (-\scew,-\height) 
+        to[bend left=\lensangle] (\scew,\height) -- cycle;
+    % Move the node inside the path construction
+\path (\scew,\height) to[bend left=\lensangle] node[pos=0.5, above] {$R_-$} (-\scew,-\height);
+\path (-\scew,-\height) to[bend left=\lensangle] node[pos=0.5, below] {$R^-$} (\scew,\height);
+
+    \node[circle, fill, inner sep=2pt] (lenstop#1#2) at (\scew,\height) {};
+    \node[circle, fill, inner sep=2pt] (lensbottom#1#2) at (-\scew,-\height) {};
+        
+\end{scope}
+}
+
+    \begin{tikzpicture}[scale=0.5]
+
+        \lens{0}{0}
+
+        \draw[thick,Orange] 
+        (lensbottom00) -- 
+        ++(3,3) -- 
+        ++(1,-1) -- 
+        ++(3,3) --
+        ++(1,-1) --
+        ++(2,2);
+
+        \draw[-{Latex[length=2.5mm, width=1.5mm]}] (5,0) -- (6,0);
+
+        \node[circle, fill, inner sep=2pt] (bb) at (7,-2-\height) {};
+        \node[circle, fill, inner sep=2pt] (bt) at (17,-2+\height) {};
+        \node[circle, fill, inner sep=2pt] (tb) at (7,+2-\height) {};
+        \node[circle, fill, inner sep=2pt] (tt) at (17,+2+\height) {};
+
+        \draw (bb) to[bend right=\lensangle] (bt);
+        \draw (tb) to[bend left=\lensangle] (tt);
+        \draw (bb) -- (tb) (bt) -- (tt);
+
+        \path (bb) to[bend right=\lensangle] node[pos=0.5, above] {$R_-$} (bt);
+        \path (tb) to[bend left=\lensangle] node[pos=0.5, below] {$R^-$} (tt);
+
+        \draw[thick,Orange] 
+        (bb) -- 
+        ++(3,3) -- 
+        ++(1,-1) -- 
+        ++(3,3) --
+        ++(1,-1) --
+        ++(2,2);
+        
+        \draw[thick,Orange] 
+        (tb) -- 
+        ++(3,3) -- 
+        ++(1,-1) -- 
+        ++(3,3) --
+        ++(1,-1) --
+        ++(2,2);
+
+
+
+        \draw
+        (bb) ++(0,1) -- 
+        ++(3,3) -- 
+        ++(1,-1) -- 
+        ++(3,3) --
+        ++(1,-1) --
+        ++(2,2);
+        \draw
+        (bb) ++(0,2) -- 
+        ++(3,3) -- 
+        ++(1,-1) -- 
+        ++(3,3) --
+        ++(1,-1) --
+        ++(2,2);
+        \draw
+        (bb) ++(0,3) -- 
+        ++(3,3) -- 
+        ++(1,-1) -- 
+        ++(3,3) --
+        ++(1,-1) --
+        ++(2,2);
+
+        \def\lensangle{20}
+        \def\xstep{1cm}
+        \def\ystep{1cm}
+        \def\scew{0}
+        \def\height{2}
+        \renewcommand{\lens}[2]{
+\begin{scope}[xshift=#1*\xstep, yshift=#2*\ystep]
+    
+    \filldraw[draw=black,fill=white] 
+        (\scew,\height) to[bend left=\lensangle] (-\scew,-\height) 
+        to[bend left=\lensangle] (\scew,\height) -- cycle;
+
+    \node (lenstop#1#2) at (\scew,\height) {};
+    \node (lensbottom#1#2) at (-\scew,-\height) {};
+        
+    \pgfmathtruncatemacro\sign{mod(#1,2)}
+    \if\sign 0{\draw[-{Latex[length=2.5mm, width=1.5mm]}] (-0.3,0) -- (0.3,0);}\else{\draw[{Latex[length=2.5mm, width=1.5mm]}-] (-0.3,0) -- (0.3,0);}\fi
+\end{scope}}
+\begin{scope}[xshift=7cm,yshift=-3cm]
+
+        
+        \foreach\x/\y in {0/0,1/1,2/2,3/3,4/2,5/3,6/4,7/5,8/4,9/5,10/6}
+        {\lens{\x}{\y}}
+\end{scope}
+
+\foreach\x in {bb,bt,tb,tt}{
+    \node[circle, fill, inner sep=2pt] at (\x) {};
+}
+        
+    \end{tikzpicture}

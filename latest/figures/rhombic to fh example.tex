@@ -1,0 +1,40 @@
+
+\thispagestyle{empty}
+
+\begin{tikzpicture}[scale = 0.5, every node/.style={font=\scriptsize}]
+
+\coordinate (empty) at (6,-2);
+
+\coordinate (1) at (2,0);
+\coordinate (2) at (4,0);
+\coordinate (3) at (6,0);
+\coordinate (4) at (10,0);
+
+\coordinate (12) at (2,2);
+\coordinate (23) at (4,2);
+\coordinate (13) at (6,2);
+\coordinate (34) at (8,2);
+\coordinate (24) at (10,2);
+\coordinate (14) at (12,2);
+
+\coordinate (123) at (4,4);
+\coordinate (134) at (8,4);
+\coordinate (234) at (10,4);
+\coordinate (124) at (12,4);
+
+\coordinate (1234) at (8,6);
+
+\fill[Green] (empty) -- (1) -- (12) -- (2);
+\fill[Orange] (2) -- (12) -- (123) -- (23);
+\fill[Blue] (empty) -- (2) -- (23) -- (3);
+\fill[Vermilion] (3) -- (23) -- (123) -- (13);
+\fill[Purple] (13) -- (123) -- (1234) -- (134);
+
+\foreach \a/\b in {empty/1,empty/2,empty/3,empty/4,1/12,2/12,2/23,3/23,3/13,3/34,4/34,4/24,4/14,12/123,23/123,13/123,13/134,34/134,34/234,24/234,24/124,14/124,1234/123,1234/124,1234/134,1234/234}
+{  \draw (\a) -- (\b);  }
+
+\foreach\n in {1,2,3,4,12,13,14,23,24,34,123,124,134,234,1234}
+{ \node[draw, fill = white] at (\n) {$\n$}; }
+\node[draw, fill = white] at (empty) {$\emptyset$};
+
+\end{tikzpicture}
