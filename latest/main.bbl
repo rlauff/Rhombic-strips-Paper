@@ -451,6 +451,47 @@
       \field{pages}{51\bibrangedash 56}
       \range{pages}{6}
     \endentry
+    \entry{fixedinversions}{article}{}{}
+      \name{author}{2}{}{%
+        {{hash=64ecac088899f778a8ec5ca2707c9fc9}{%
+           family={Effler},
+           familyi={E\bibinitperiod},
+           given={Scott},
+           giveni={S\bibinitperiod}}}%
+        {{hash=d451a3d41bdcb4e05dea10530db80d68}{%
+           family={Ruskey},
+           familyi={R\bibinitperiod},
+           given={Frank},
+           giveni={F\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Elsevier North-Holland, Inc.}%
+      }
+      \strng{namehash}{74fe343d5e1090d8e442b575ec9324c7}
+      \strng{fullhash}{74fe343d5e1090d8e442b575ec9324c7}
+      \strng{fullhashraw}{74fe343d5e1090d8e442b575ec9324c7}
+      \strng{bibnamehash}{74fe343d5e1090d8e442b575ec9324c7}
+      \strng{authorbibnamehash}{74fe343d5e1090d8e442b575ec9324c7}
+      \strng{authornamehash}{74fe343d5e1090d8e442b575ec9324c7}
+      \strng{authorfullhash}{74fe343d5e1090d8e442b575ec9324c7}
+      \strng{authorfullhashraw}{74fe343d5e1090d8e442b575ec9324c7}
+      \field{labelalpha}{ER03}
+      \field{sortinit}{7}
+      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{issn}{0020-0190}
+      \field{journaltitle}{Inf. Process. Lett.}
+      \field{number}{2}
+      \field{title}{A CAT algorithm for generating permutations with a fixed number of inversions}
+      \field{volume}{86}
+      \field{year}{2003}
+      \field{pages}{107\bibrangedash 112}
+      \range{pages}{6}
+      \verb{doi}
+      \verb 10.1016/S0020-0190(02)00481-7
+      \endverb
+    \endentry
     \entry{celebrating_associahedron}{article}{}{}
       \name{author}{3}{}{%
         {{hash=f97861f2a1c34240ca2ffa0426ee0d7a}{%
@@ -478,8 +519,8 @@
       \strng{authorfullhash}{1605a622931fc8362465d4c81c115c38}
       \strng{authorfullhashraw}{1605a622931fc8362465d4c81c115c38}
       \field{labelalpha}{PSZ23}
-      \field{sortinit}{7}
-      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
+      \field{sortinit}{9}
+      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{Arch. Math.}
@@ -511,8 +552,8 @@
       \strng{authorfullhash}{d36a594cfd15610bf8685fa16dd582e3}
       \strng{authorfullhashraw}{d36a594cfd15610bf8685fa16dd582e3}
       \field{labelalpha}{BT94}
-      \field{sortinit}{8}
-      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{J. Math. Phys.}
@@ -544,8 +585,8 @@
       \strng{authorfullhashraw}{376eb7b3038e56344396aa0a0042d1fa}
       \field{extraname}{1}
       \field{labelalpha}{Pou17}
-      \field{sortinit}{8}
-      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{Isr. J. Math.}
@@ -591,8 +632,8 @@
       \strng{authorfullhash}{88ea8c4324263b1851cffc87b0c24957}
       \strng{authorfullhashraw}{88ea8c4324263b1851cffc87b0c24957}
       \field{labelalpha}{CMP+15}
-      \field{sortinit}{9}
-      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{Discrete Mathematics \& Theoretical Computer Science}
@@ -1294,8 +1335,8 @@
       \strng{authorfullhash}{a5e9727f29fd06c969058fed55354d0d}
       \strng{authorfullhashraw}{a5e9727f29fd06c969058fed55354d0d}
       \field{labelalpha}{BBM+26}
-      \field{sortinit}{1}
-      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{booktitle}{Proceedings of the 2026 Annual ACM-SIAM Symposium on Discrete Algorithms (SODA)}
@@ -2070,6 +2111,47 @@
       \range{pages}{10}
       \verb{doi}
       \verb 10.1145/780542.780612
+      \endverb
+    \endentry
+    \entry{fixedinversions}{article}{}{}
+      \name{author}{2}{}{%
+        {{hash=64ecac088899f778a8ec5ca2707c9fc9}{%
+           family={Effler},
+           familyi={E\bibinitperiod},
+           given={Scott},
+           giveni={S\bibinitperiod}}}%
+        {{hash=d451a3d41bdcb4e05dea10530db80d68}{%
+           family={Ruskey},
+           familyi={R\bibinitperiod},
+           given={Frank},
+           giveni={F\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Elsevier North-Holland, Inc.}%
+      }
+      \strng{namehash}{74fe343d5e1090d8e442b575ec9324c7}
+      \strng{fullhash}{74fe343d5e1090d8e442b575ec9324c7}
+      \strng{fullhashraw}{74fe343d5e1090d8e442b575ec9324c7}
+      \strng{bibnamehash}{74fe343d5e1090d8e442b575ec9324c7}
+      \strng{authorbibnamehash}{74fe343d5e1090d8e442b575ec9324c7}
+      \strng{authornamehash}{74fe343d5e1090d8e442b575ec9324c7}
+      \strng{authorfullhash}{74fe343d5e1090d8e442b575ec9324c7}
+      \strng{authorfullhashraw}{74fe343d5e1090d8e442b575ec9324c7}
+      \field{labelalpha}{ER03}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{issn}{0020-0190}
+      \field{journaltitle}{Inf. Process. Lett.}
+      \field{number}{2}
+      \field{title}{A CAT algorithm for generating permutations with a fixed number of inversions}
+      \field{volume}{86}
+      \field{year}{2003}
+      \field{pages}{107\bibrangedash 112}
+      \range{pages}{6}
+      \verb{doi}
+      \verb 10.1016/S0020-0190(02)00481-7
       \endverb
     \endentry
     \entry{non-revisiting3}{article}{}{}

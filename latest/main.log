@@ -1,7 +1,7 @@
-This is LuaHBTeX, Version 1.24.0 (TeX Live 2026)  (format=lualatex 2026.8.28)  10 SEP 2026 10:43
+This is LuaHBTeX, Version 1.24.0 (TeX Live 2026)  (format=lualatex 2026.8.28)  17 SEP 2026 12:59
  restricted system commands enabled.
-**/home/robert/TeX/Paper/Rhombic-strips-Paper/latest/main.tex
-(/home/robert/TeX/Paper/Rhombic-strips-Paper/latest/main.tex
+**main.tex
+(./main.tex
 LaTeX2e <2025-11-01>
 L3 programming layer <2026-03-20>
 Lua module: luaotfload 2024-12-03 v3.29 Lua based OpenType font support
@@ -2041,6 +2041,12 @@ LaTeX Font Info:    Trying to load font information for U+msb on input line 144
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
+LaTeX Font Info:    Font shape `TU/LinLibertine(0)/m/n' will be
+(Font)              scaled to size 9.0pt on input line 144.
+LaTeX Font Info:    Font shape `TU/LinLibertine(0)/m/n' will be
+(Font)              scaled to size 6.0pt on input line 144.
+LaTeX Font Info:    Font shape `TU/LinLibertine(0)/m/n' will be
+(Font)              scaled to size 5.0pt on input line 144.
 LaTeX Font Info:    Font shape `TU/LinLibertine(0)/b/n' will be
 (Font)              scaled to size 10.95pt on input line 146.
  [1
@@ -2057,196 +2063,72 @@ LaTeX Font Info:    Font shape `TU/LinLibertine(0)/m/it' will be
 (Font)              scaled to size 10.95pt on input line 202.
 LaTeX Font Info:    Font shape `TU/LinLibertine(0)/m/n' will be
 (Font)              scaled to size 8.0pt on input line 206.
-LaTeX Font Info:    Font shape `TU/LinLibertine(0)/m/n' will be
-(Font)              scaled to size 6.0pt on input line 206.
-
-
-LaTeX Warning: Reference `fig:unfolding explicit' on page 1 undefined on input 
-line 206.
-
-(./figures/unfolding_explicit.tex) (./figures/SJT_explicit.tex)
-
-LaTeX Warning: Reference `fig:venn unfolding' on page 1 undefined on input line
- 228.
-
-[2]
-
-LaTeX Warning: Reference `fig:venn zigzagging' on page 1 undefined on input lin
-e 230.
-
-("./figures/Venn unfolding.tex")
+ (./figures/unfolding_explicit.tex)
+(./figures/SJT_explicit.tex)
 LaTeX Font Info:    Font shape `TU/LinLibertine(0)/m/sc' will be
-(Font)              scaled to size 10.95pt on input line 238.
+(Font)              scaled to size 10.95pt on input line 226.
+ [2] (./figures/Venn_unfolding.tex)
 LaTeX Font Info:    Font shape `TU/LinLibertine(0)/m/sc' will be
-(Font)              scaled to size 10.0pt on input line 238.
- ("./figures/Venn zigzagging.tex"
-LaTeX Font Info:    Font shape `TU/LinLibertine(0)/m/n' will be
-(Font)              scaled to size 5.0pt on input line 43.
-)
+(Font)              scaled to size 10.0pt on input line 236.
 
-LaTeX Warning: Reference `fig:B4 on sphere' on page 1 undefined on input line 2
-55.
-
-
-LaTeX Warning: Reference `fig:B4 on plane' on page 1 undefined on input line 25
-5.
-
-("./figures/B4 on sphere.tex") [3] ("./figures/B4 on plane.tex")
-
-LaTeX Warning: Reference `fig:B4 on sphere' on page 1 undefined on input line 2
-71.
-
-
-LaTeX Warning: Reference `fig:B4 on sphere' on page 1 undefined on input line 2
-71.
-
-
-LaTeX Warning: Reference `fig:B4 on sphere' on page 1 undefined on input line 2
-71.
-
-
-LaTeX Warning: Reference `fig:B4 on sphere' on page 1 undefined on input line 2
-71.
-
-
-LaTeX Warning: Citation 'fixedinversions' on page 4 undefined on input line 275
-.
-
-[4] ("./figures/boolean with brgc.tex")
+(./figures/Venn_zigzagging.tex) (./figures/B4_on_sphere.tex) [3]
+(./figures/B4_on_plane.tex) [4] (./figures/boolean_with_brgc.tex)
+Package hyperref Info: bookmark level for unknown theorem defaults to 0 on inpu
+t line 292.
+Package hyperref Info: bookmark level for unknown corollary defaults to 0 on in
+put line 302.
+ [5]
+(./figures/tree_flipping_down.tex) [6]
 LaTeX Font Info:    Font shape `TU/LinBiolinum(0)/b/n' will be
-(Font)              scaled to size 12.0pt on input line 290.
- [5] (./figures/tubes_compat_1.tex)
+(Font)              scaled to size 12.0pt on input line 355.
+ (./figures/tubes_compat_1.tex)
 (./figures/tubes_compat_2.tex)
-Underfull \hbox (badness 3590) in paragraph at lines 320--320
+Underfull \hbox (badness 3590) in paragraph at lines 385--385
 \TU/LinLibertine(0)/m/n/10 is not con-nected, so
  []
 
 (./figures/tubes_non_compat_1.tex) (./figures/tubes_non_compat_2.tex)
 (./figures/cube_as_graph_associahedron.tex) (./figures/asso_as_graph_asso.tex)
-[6] [7]
+[7] [8] [9]
 Package hyperref Info: bookmark level for unknown observation defaults to 0 on 
-input line 394.
- ("./figures/rhombic to fh example.tex")
-
-LaTeX Warning: Reference `fig:perm as truncation' on page 1 undefined on input 
-line 402.
-
-
-LaTeX Warning: Reference `fig:perm as truncation' on page 1 undefined on input 
-line 402.
-
-[8]
-
-LaTeX Warning: Reference `fig:perm as truncation' on page 1 undefined on input 
-line 413.
-
-
-LaTeX Warning: Reference `fig:rhombic to fh example' on page 1 undefined on inp
-ut line 415.
-
-[9]
-Overfull \hbox (3.47601pt too wide) in paragraph at lines 418--419
+input line 459.
+ (./figures/rhombic_to_fh_example.tex) [10]
+Overfull \hbox (3.47601pt too wide) in paragraph at lines 483--484
 []\TU/LinBiolinum(0)/b/n/10.95 Om-ni-trun-ca-tion and Graph As-so-ci-a-he-dra[]
 [] \TU/LinLibertine(0)/m/n/10.95 The cor-re-spon-dence be-tween facet-Hamiltonia
 n paths
  []
 
 Package hyperref Info: bookmark level for unknown lemma defaults to 0 on input 
-line 419.
-("./figures/perm as truncation.tex")
-Overfull \hbox (1.83257pt too wide) in paragraph at lines 116--428
+line 484.
+(./figures/perm_as_truncation.tex)
+Overfull \hbox (1.83257pt too wide) in paragraph at lines 116--493
  [][] 
  []
 
-LaTeX Font Info:    Font shape `TU/LinLibertine(0)/b/n' will be
-(Font)              scaled to size 10.0pt on input line 428.
 
-LaTeX Warning: Reference `fig:rhombic to fh example' on page 1 undefined on inp
-ut line 428.
-
-
-LaTeX Warning: Reference `fig:rhombic to fh example' on page 1 undefined on inp
-ut line 428.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 428--428
+Underfull \hbox (badness 10000) in paragraph at lines 493--493
 \TU/LinLibertine(0)/m/n/10 Faces of the per-mu-ta-he-dron. The facet-
  []
 
-("./figures/Bperm as truncation.tex")
-Overfull \hbox (1.21169pt too wide) in paragraph at lines 140--435
+(./figures/Bperm_as_truncation.tex)
+Overfull \hbox (1.21169pt too wide) in paragraph at lines 140--500
  [][] 
  []
 
 
-Overfull \hbox (13.63779pt too wide) in paragraph at lines 444--445
+Overfull \hbox (13.63779pt too wide) in paragraph at lines 509--510
 []\TU/LinBiolinum(0)/b/n/10.95 The $\OML/cmm/m/it/10.95 B$\TU/LinBiolinum(0)/b/
 n/10.95 -Permutahedron[][] \TU/LinLibertine(0)/m/n/10.95 Re-cently, [][]Behrooz-
 nia, Bren-ner, Merino, Mütze, Rieck, and Ver-ciani [[][]BBM+26[][]]
  []
 
-[10] ("./figures/K33 on sphere.tex") ("./figures/K33 on plane.tex")
-
-LaTeX Warning: Reference `fig:K33 on sphere' on page 1 undefined on input line 
-456.
-
-
-LaTeX Warning: Reference `fig:K33 on sphere' on page 1 undefined on input line 
-456.
-
-
-LaTeX Warning: Reference `fig:K33 on sphere' on page 1 undefined on input line 
-456.
-
-
-LaTeX Warning: Reference `fig:K33 on sphere' on page 1 undefined on input line 
-456.
-
-[11]
-
-LaTeX Warning: Reference `fig:tree flipping down' on page 1 undefined on input 
-line 466.
-
-
-LaTeX Warning: Reference `fig:fh for complete binary' on page 1 undefined on in
-put line 466.
-
-
-LaTeX Warning: Reference `fig:complete binary tree rs' on page 1 undefined on i
-nput line 466.
-
-
-LaTeX Warning: Reference `fig:10 node tree rs' on page 1 undefined on input lin
-e 466.
-
-
-LaTeX Warning: Reference `fig:8 node tree rs' on page 1 undefined on input line
- 466.
-
-[12] ("./figures/boolean4 venn.tex") ("./figures/Venn unfolding generalized.tex
-") ("./figures/Venn zigzagging generalized.tex") (./figures/1232.tex) [13]
-
-LaTeX Warning: Reference `fig:combined venn generalized' on page 1 undefined on
- input line 515.
-
-[14]
-Package hyperref Info: bookmark level for unknown theorem defaults to 0 on inpu
-t line 523.
-Package hyperref Info: bookmark level for unknown corollary defaults to 0 on in
-put line 533.
-
-
-LaTeX Warning: Citation 'fixedinversions' on page 15 undefined on input line 53
-7.
-
-
-LaTeX Warning: Reference `fig:tree flipping down' on page 1 undefined on input 
-line 552.
-
-[15] ("./figures/tree flipping down.tex") (./figures/unfolding.tex) [16]
-(./figures/zigzagging.tex) (./figures/cylinder.tex) [17] [18]
-(./figures/3grid_rhombic.tex)
-Overfull \hbox (63.51302pt too wide) in paragraph at lines 681--688
+[11] (./figures/K33_on_sphere.tex) (./figures/K33_on_plane.tex) [12] [13]
+(./figures/boolean4_venn.tex) (./figures/Venn_unfolding_generalized.tex)
+(./figures/Venn_zigzagging_generalized.tex) (./figures/1232.tex) [14] [15]
+[16] (./figures/unfolding.tex) [17] (./figures/zigzagging.tex)
+(./figures/cylinder.tex) [18] (./figures/3grid_rhombic.tex)
+Overfull \hbox (63.51302pt too wide) in paragraph at lines 685--692
 []\TU/LinLibertine(0)/m/n/10.95 The cy-cle and con-nect-ing edges form a cylin-d
 er whose lat-eral faces are the quadri-lat-er-als on $\OT1/cmr/m/n/10.95 (\OML/
 cmm/m/it/10.95 w; j\OT1/cmr/m/n/10.95 )\OML/cmm/m/it/10.95 ; \OT1/cmr/m/n/10.95
@@ -2254,13 +2136,8 @@ cmm/m/it/10.95 w; j\OT1/cmr/m/n/10.95 )\OML/cmm/m/it/10.95 ; \OT1/cmr/m/n/10.95
 m/n/10.95 (\OML/cmm/m/it/10.95 w[]; j \OT1/cmr/m/n/10.95 +
  []
 
-(./figures/weakBruhat4.tex)
-
-LaTeX Warning: Citation 'fixedinversions' on page 19 undefined on input line 70
-6.
-
-[19] [20] (./figures/product.tex) [21]
-("./figures/complete binary tree depth 2 rs.tex"
+[19] (./figures/weakBruhat4.tex) [20] (./figures/product.tex) [21]
+(./figures/complete_binary_tree_depth_2_rs.tex
 \boxshapea=\box72
 \boxshapeb=\box73
 \boxshapec=\box74
@@ -2287,19 +2164,9 @@ LaTeX Warning: Citation 'fixedinversions' on page 19 undefined on input line 70
 \boxshapex=\box95
 \boxshapey=\box96
 \boxshapez=\box97
-)
-("./figures/tree flipping up.tex")
-("./figures/fh path for complete binary tree rs.tex")
-
-LaTeX Warning: Reference `fig:complete binary tree rs' on page 1 undefined on i
-nput line 762.
-
-
-LaTeX Warning: Reference `fig:complete binary tree rs' on page 1 undefined on i
-nput line 762.
-
-
-Overfull \hbox (1.44737pt too wide) in paragraph at lines 781--782
+) (./figures/tree_flipping_up.tex) (./figures/fh_path_for_complete_binary_tree_
+rs.tex)
+Overfull \hbox (1.44737pt too wide) in paragraph at lines 785--786
 \TU/LinLibertine(0)/m/n/10.95 the path to $\OML/cmm/m/it/10.95 `$ \TU/LinLibert
 ine(0)/m/n/10.95 from $\OML/cmm/m/it/10.95 r$\TU/LinLibertine(0)/m/n/10.95 . The
 n $\OML/cmm/m/it/10.95 t$ \TU/LinLibertine(0)/m/n/10.95 con-tains the tubes $\O
@@ -2309,49 +2176,32 @@ OML/cmm/m/it/10.95 ; [] ; v[]$\TU/LinLibertine(0)/m/n/10.95 . Flip-ping $\OMS/c
 msy/m/n/10.95 f\OML/cmm/m/it/10.95 r; v[]; [] ; v[]\OMS/cmsy/m/n/10.95 g$
  []
 
-[22] [23]
-
-LaTeX Warning: Reference `thm:tree associahedra rs' on page 1 undefined on inpu
-t line 788.
-
-
-LaTeX Warning: Reference `fig:tree flipping down' on page 1 undefined on input 
-line 788.
-
-[24] [25]
-
-LaTeX Warning: Reference `fig:K33 on sphere' on page 1 undefined on input line 
-816.
-
-
-LaTeX Warning: Reference `fig:K33 on plane' on page 1 undefined on input line 8
-16.
-
+[22] [23] [24] [25]
 LaTeX Font Info:    Font shape `TU/LinLibertine(5)/m/n' will be
-(Font)              scaled to size 10.95pt on input line 828.
-[26
+(Font)              scaled to size 10.95pt on input line 832.
+ [26
 
 ]
-Overfull \hbox (1.24034pt too wide) in paragraph at lines 829--829
+Overfull \hbox (1.24034pt too wide) in paragraph at lines 833--833
 []\TU/LinLibertine(0)/m/n/10.95 L. Pournin. ``The asymp-totic di-am-e-ter of cy-
 clo-he-dra''. In: \TU/LinLibertine(0)/m/it/10.95 Isr. J. Math. \TU/LinLibertine
 (0)/m/n/10.95 219.2 (2017), pp. 609–
  []
 
 [27]
-Overfull \hbox (7.83035pt too wide) in paragraph at lines 829--829
+Overfull \hbox (7.83035pt too wide) in paragraph at lines 833--833
 []\TU/LinLibertine(0)/m/n/10.95 J. S. Mitchell. ``Ap-prox-i-mat-ing watch-man ro
 utes''. In: \TU/LinLibertine(0)/m/it/10.95 Proc. SODA 2013\TU/LinLibertine(0)/m
 /n/10.95 . SIAM. 2013, pp. 844–
  []
 
-[28] [29] ("./figures/8 node tree rs.tex"
+[28] [29] (./figures/8_node_tree_rs.tex
 \boxshapeaa=\box98
 \boxshapeab=\box99
 \boxshapeac=\box100
 \boxshapead=\box101
 \boxshapeae=\box102
-) ("./figures/10 node tree rs.tex"
+) (./figures/10_node_tree_rs.tex
 \boxshapeaf=\box103
 \boxshapeag=\box104
 \boxshapeah=\box105
@@ -2378,55 +2228,35 @@ utes''. In: \TU/LinLibertine(0)/m/it/10.95 Proc. SODA 2013\TU/LinLibertine(0)/m
 \boxshapebc=\box126
 \boxshapebd=\box127
 )
-(./figures/12631.tex) [30] [31] [32]
+(./figures/12631.tex) [30] [31] [32] (./figures/atomic_plane.tex) [33
 
-LaTeX Warning: Reference `fig:atomic plane' on page 1 undefined on input line 8
-64.
-
-("./figures/atomic plane.tex") [33
-
-] [34] (./main.aux)
+] [34]
+(./main.aux)
  ***********
 LaTeX2e <2025-11-01>
 L3 programming layer <2020/03/25>
  ***********
-
-
-LaTeX Warning: There were undefined references.
-
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
-
-Package biblatex Warning: Please (re)run Biber on the file:
-(biblatex)                main
-(biblatex)                and rerun LaTeX afterwards.
-
 Package logreq Info: Writing requests to 'main.run.xml'.
 
 \openout1 = main.run.xml
 )
 
 Here is how much of LuaTeX's memory you used:
- 58513 strings out of 475900
- 745177,2848258 words of node,token memory allocated
- 733 words of node memory still in use:
-   6 hlist, 2 vlist, 2 rule, 2 glue, 4 kern, 1 glyph, 22 attribute, 74 glue_spec
-, 22 attribute_list, 2 write, 12 pdf_action nodes
-   avail lists: 1:6,2:99654,3:44887,4:6736,5:736,6:146,7:27313,8:53,9:13148,10:2
-3,11:660
- 79868 multiletter control sequences out of 65536+600000
- 108 fonts using 19407095 bytes
- 108i,13n,328p,11257b,1423s stack positions out of 10000i,1000n,20000p,200000b,200000s
-
-warning  (pdf backend): unreferenced destination with name 'lemma.13'
-
-warning  (pdf backend): unreferenced destination with name 'theorem.8'
+ 58470 strings out of 475900
+ 745135,2848258 words of node,token memory allocated
+ 765 words of node memory still in use:
+   6 hlist, 2 vlist, 2 rule, 4 glue, 4 kern, 1 glyph, 25 attribute, 74 glue_spec
+, 25 attribute_list, 2 write, 13 pdf_action nodes
+   avail lists: 1:7,2:99654,3:44892,4:6743,5:806,6:151,7:27313,8:53,9:13148,10:2
+1,11:726
+ 79825 multiletter control sequences out of 65536+600000
+ 114 fonts using 19824399 bytes
+ 108i,13n,328p,11206b,1452s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/share/texlive/texmf-dist/fonts/opentype/public/libertine/LinLibertine_M.ot
 f></usr/share/texlive/texmf-dist/fonts/opentype/public/libertine/LinLibertine_RI
 .otf></usr/share/texlive/texmf-dist/fonts/opentype/public/libertine/LinLibertine
-_R.otf></usr/share/texlive/texmf-dist/fonts/opentype/public/libertine/LinLiberti
-ne_RB.otf></usr/share/texlive/texmf-dist/fonts/opentype/public/libertine/LinBiol
+_RB.otf></usr/share/texlive/texmf-dist/fonts/opentype/public/libertine/LinLibert
+ine_R.otf></usr/share/texlive/texmf-dist/fonts/opentype/public/libertine/LinBiol
 inum_RB.otf></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10
 .pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></
 usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/shar
@@ -2438,10 +2268,10 @@ ublic/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/a
 msfonts/cm/cmsy6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/
 cm/cmsy8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/
 msbm10.pfb>
-Output written on main.pdf (34 pages, 510327 bytes).
+Output written on main.pdf (34 pages, 511799 bytes).
 
-PDF statistics: 622 PDF objects out of 1000 (max. 8388607)
- 551 compressed objects within 6 object streams
- 172 named destinations out of 1000 (max. 1048576)
+PDF statistics: 670 PDF objects out of 1000 (max. 8388607)
+ 592 compressed objects within 6 object streams
+ 173 named destinations out of 1000 (max. 1048576)
  144 words of extra memory for PDF output out of 10000 (max. 100000000)
 

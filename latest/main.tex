@@ -1,4 +1,4 @@
-
+\ifdefined\pdfoutput\pdfoutput=1\fi % make arXiv use pdfLaTeX; guarded so LuaLaTeX still works
 \documentclass[fontsize=11pt,a4paper,DIV=12]{scrartcl}
 
 % --------------------------------------------------------
@@ -123,7 +123,7 @@
   \fi
 }
 
-    \newcommand{\anonymous}{Y} %set to Y for anonymous version
+    \newcommand{\anonymous}{N} %set to Y for anonymous version
 \begin{document}
 
 \title{\huge Rhombic Strips of Graded Posets}
@@ -216,8 +216,6 @@ The SJT Gray code lists the set of permutations of $[n]$ by applying adjacent tr
 
 This idea extends very far. Similar constructions can be used to weave together different Gray codes, and combining this with unfolding allows for creative and powerful proofs. The most general version of zigzagging is probably algorithm J from the seminal series of papers around generating zigzag languages by Mütze et al. \cite{PL1,PL2,PL3,PL4,PL5}. Using so called minimal jumps in permutations, algorithm J can enumerate a large variety of combinatorial objects using a zigzagging construction inspired by SJT.
 
-In many Gray code constructions, variations and combinations of these basic components are used.
-
 \begin{figure}
     \centering
     \input{figures/SJT_explicit}
@@ -234,7 +232,7 @@ The original construction by Venn goes as follows: Say the dual graph of a Venn 
     % Subfigure 1
     \begin{subfigure}[b]{0.48\textwidth}
         \centering
-        \input{figures/Venn unfolding}
+        \input{figures/Venn_unfolding}
         \caption{Venn diagram unfolding}
         \label{fig:venn unfolding}
     \end{subfigure}
@@ -242,7 +240,7 @@ The original construction by Venn goes as follows: Say the dual graph of a Venn 
     % Subfigure 2
     \begin{subfigure}[b]{0.48\textwidth}
         \centering
-        \input{figures/Venn zigzagging}
+        \input{figures/Venn_zigzagging}
         \caption{Venn diagram zigzagging}
         \label{fig:venn zigzagging}
     \end{subfigure}
@@ -258,7 +256,7 @@ By analyzing these strips, we can bridge Gray codes and geometry. Their power co
 
 \begin{figure}
     \centering
-    \input{figures/B4 on sphere}
+    \input{figures/B4_on_sphere}
     \caption{A cyclic rhombic strip of the face lattice of the 4-dimensional cube. Vertex labels are omitted for visibility. Circles of latitude are drawn in orange to indicate the ranks.}
     \label{fig:B4 on sphere}
 \end{figure}
@@ -266,7 +264,7 @@ By analyzing these strips, we can bridge Gray codes and geometry. Their power co
 \begin{figure}
     \centering
     \makebox[\textwidth][c]{
-        \input{figures/B4 on plane}
+        \input{figures/B4_on_plane}
     }
     \caption{The cyclic rhombic strip of the face lattice of the 4-dimensional cube from \Cref{fig:B4 on sphere} on the plane. Note that the leftmost and rightmost chains are equal and that empty set and full cube have been omitted in this version. The ranks are indicated by orange lines as in \Cref{fig:B4 on sphere}.}
     \label{fig:B4 on plane}
@@ -276,14 +274,81 @@ A rhombic strip $R$ of a graded poset $P$ defines orderings of the ranks of $P$.
 
 It is also common for $P$ to be the face lattice of a polytope $\mathcal P$. In this case, the elements of rank $k$ are the faces of dimension $k$. The $k$'th rank of a rhombic strip is then a listing of the $k$-dimensional faces such that the intersection and the span of two adjacent faces are $k-1$ and $k+1$ dimensional, respectively. For extremal $k$, such listings consist of Hamilton paths or cycles of $\mathcal P$ and its dual.
 
-The paper is structured as follows: In the upcoming \Cref{sec:prelim} we introduce necessary preliminaries and notation. \Cref{sec:related} puts the results in a context of related work. After that, we give the formal statements of our results in \Cref{sec:results}. In \Cref{sec:proofs}, we give the proofs, and in \Cref{sec:conclusion} we review the findings and state open problems.
+The paper is structured as follows: We give the formal statements of our results in \Cref{sec:results}. After that, in \Cref{sec:prelim}, we give detailed definitions and define notation. \Cref{sec:related} puts the results in a context of related work. In \Cref{sec:proofs}, we give the proofs, and in \Cref{sec:conclusion} we review the findings and state open problems.
 
 \begin{figure}
     \centering
-    \input{figures/boolean with brgc}
+    \input{figures/boolean_with_brgc}
     \caption{A rhombic strip for the Boolean lattice for $n=5$. The BRGC is marked in blue. This rhombic strip can be obtained by using the unfolding construction from below. The two parts that are marked by dashed boxes. Note that the boxes contain rhombic strips for the Boolean lattice for $n=4$, but once with and once without 5 in every set.}
     \label{fig:boolean with brgc}
 \end{figure}
+
+\section{Results}\label{sec:results}
+
+We will first consider the unfolding and zigzagging constructions.
+
+\begin{restatable}[Unfolding]{theorem}{unfolding}\label{thm:unfolding}
+    Let $P$ be a graded poset with 0 and 1 such that $P$ admits a (Hamiltonian) non-cyclic rhombic strip and let $b\in\N$ be given. Then $P\times C_b$ admits a (Hamiltonian) rhombic strip. Furthermore, $P\times C_{1}$ admits a (Hamiltonian) cyclic rhombic strip.
+\end{restatable}
+
+\begin{restatable}[Zigzagging]{theorem}{zigzagging}\label{thm:zigzagging}
+    Let $P$ be a graded poset with 0 and 1 such that $P$ admits a (cyclic) Hamiltonian rhombic strip and let $b\in\N$ be given. Then $P\times C_b$ admits a (cyclic) Hamiltonian rhombic strip.
+\end{restatable}
+
+Using these, we can prove our first main result. The $k$-combinations of a multiset admit cyclic Gray codes if at least one element of the multiset appears an odd number of times. This follows from the constructions above because the $k$-combinations appear as rank $k$ in a product of chains:
+
+\begin{restatable}[Multiset Combinations]{corollary}{multisetcombinations}\label{thm:multiset combinations}
+    The $k$-combinations of the multiset $\{1^{(b_1)},\ldots,n^{(b_n)}\}$ admit a cyclic Gray code under single replacements if at least one $b_i$ is odd and $n\ge 3$.
+\end{restatable}
+
+Adapting the zigzagging construction for this specific problem, we are able to fill the gap and prove the full conjecture of Ruskey and Savage about multiset combinations.
+\begin{restatable}[Multiset Combinations]{theorem}{multisetcombinationsfull}
+    The $k$-combinations of the multiset $\{1^{(b_1)},\ldots,n^{(b_n)}\}$ admit a cyclic Gray code under single replacements if $n\ge 3$.
+\end{restatable}
+
+\begin{restatable}[Weak Bruhat Order(\cite{fixedinversions})]{corollary}{weakBruhat}\label{thm:bruhat}
+    For any given $k$, the SJT Gray code for permutations of $[n]$ restricts to Gray codes on the set of permutations with exactly $k$ inversions such that adjacent permutations differ in two adjacent transpositions.
+\end{restatable}
+
+Next, we combine the two constructions to obtain a vastly more powerful tool:
+
+\begin{restatable}[Cartesian Products]{theorem}{products}\label{thm:products}
+    Let $P$ and $Q$ be graded posets with 0 and 1. Assume that $Q$ admits a rhombic strip and $P$ admits a (cyclic) Hamiltonian rhombic strip. Then $P\times Q$ admits a (cyclic) rhombic strip. If the rhombic strip of $Q$ is Hamiltonian, then $P\times Q$ admits a (cyclic) Hamiltonian rhombic strip.
+\end{restatable}
+Note that both unfolding and zigzagging are special cases of the product construction: $P=C_b$ yields unfolding and $Q=C_b$ yields zigzagging.
+
+This tool allows us to prove some strong theorems. First, we obtain rhombic strips for distributed lattices of tree posets. This follows from the theorem above because $P_r(T)$ is a product of the corresponding lattices of its subtrees at $r$:
+
+\begin{restatable}[Rhombic Strips for Tree Associahedra]{corollary}{treeassociahedrars}\label{thm:tree associahedra rs}
+    Let $T$ be a tree with root $r$ and let the vertices of $T$ be ordered according to a depth first search (DFS). Then there exists a Hamiltonian rhombic strip of $P_r(T)$ whose left boundary is associated to the depth first search order that is given.
+\end{restatable}
+
+Such a rhombic strip then induces a path on the graph associahedron of the base tree. This path visits all subtrees containing $r$ in a continuous arc. After flipping down, see \Cref{fig:tree flipping down}, we are in a position to apply induction:
+
+\begin{figure}
+    \centering
+    \input{figures/tree_flipping_down}
+    \caption{After visiting all tubes of a tree $T$ containing its root $r$, we flip the tubes in order of ascending size and obtain nested tubings of all subtrees. In purple, the result from flipping down again in each principal subtree (the bottom-up tubing).}
+    \label{fig:tree flipping down}
+\end{figure}
+
+\begin{restatable}[Facet-Hamiltonian Cycles for Tree Associahedra]{corollary}{treeassociahedrafh}\label{thm:tree associahedra fh}
+    Let $T$ be a tree with root $r$ and any DFS ordering of its vertices. Let $t$ be the nested tubing of $T$ which agrees with this DFS ordering. Then $\mathcal{A}(T)$ admits a facet-Hamiltonian path starting in $t$ which can be closed to a facet-Hamiltonian cycle.
+\end{restatable}
+
+Because the rhombic strips we obtain are Hamiltonian, they induce a Gray code for the subtrees of the base tree:
+
+\begin{restatable}[Gray Codes for Subtrees]{corollary}{subtreecodes}\label{thm:subtree gray code}
+   Let $T$ be a rooted tree with $n$ vertices, and let $k\le n$. Then there exists a Gray code of the rooted subtrees of $T$ such that adjacent subtrees differ in a single vertex (which must be a leaf of one of the subtrees). Furthermore, this code restricts to Gray codes on the subtrees with precisely $k$ vertices such that the vertex sets of adjacent subtrees have symmetric difference of size 2. In other words, the flip operation moves exactly one leaf to a new location.
+\end{restatable}
+
+% \begin{restatable}{corollary}{tree permutation languages}\label{thm:tree associahedra}
+%     Given a permutation language $L\subset S_n$ such that there exists a rooted tree $T$ such that 
+%     \[
+%         L=\{\pi\in S_n\mid\text{ All prefixes of }\pi\text{ induce rooted subtrees of }T\}.
+%     \]
+%     Then there exists an adjacent transposition Gray code for $L$.
+% \end{restatable}
 
 \section{Preliminaries}\label{sec:prelim}
 
@@ -398,7 +463,7 @@ We call a cycle or path $\gamma\colon[0,1]\to S^2$ on the sphere \defn{$c$-monot
 
 \begin{figure}
     \centering
-    \input{figures/rhombic to fh example}
+    \input{figures/rhombic_to_fh_example}
     \caption{A rhombic strip of $\mathcal B_4$ with some colorfully marked rhombi. The maximal chains represent permutations, and a flip across a rhombus represents an adjacent transposition. The left boundary represents 1234. Flipping across the green rhombus, we obtain 2134. Then, flipping orange, blue, red and finally purple, we obtain 2314, 3214, 3124 and finally 3142. This rhombic strip represents a facet-Hamiltonian path of the 3 dimensional permutahedron. The facet-Hamiltonian path is depicted in \Cref{fig:perm as truncation}.}
     \label{fig:rhombic to fh example}
 \end{figure}
@@ -424,14 +489,14 @@ The correspondence between facet-Hamiltonian paths and cycles and rhombic strips
     \centering
     \begin{subfigure}[b]{0.48\textwidth}
         \centering
-        \input{figures/perm as truncation}
+        \input{figures/perm_as_truncation}
         \caption{The vertices of the simplex are labeled $1,2,3,4$. Faces of the permutahedron. The facet-Hamiltonian path induced by the rhombic strip in \Cref{fig:rhombic to fh example} is drawn in orange. Note that it can be closed to a facet-Hamiltonian cycle.}
         \label{fig:perm as truncation}
     \end{subfigure}
     \hfill
     \begin{subfigure}[b]{0.48\textwidth}
         \centering
-        \input{figures/Bperm as truncation}
+        \input{figures/Bperm_as_truncation}
         \caption{The 3 dimensional $B$-permutahedron as the omnitruncation of the 3 dimensional cube. A facet-Hamiltonian cycle is highlighted in orange.}
         \label{fig:Bperm}
     \end{subfigure}
@@ -445,14 +510,14 @@ Recently, \textcite{Listing_faces} have conjectured that the face lattice of any
 
 \begin{figure}
     \centering
-    \input{figures/K33 on sphere}
+    \input{figures/K33_on_sphere}
     \caption{The lattice of connected induces subgraphs (tubes) of $K_{3,3}$. Edges of $K_{3,3}$ are omitted for visibility. Circles of latitude are drawn in orange, indicating the ranks.}
     \label{fig:K33 on sphere}
 \end{figure}
 
 \begin{figure}
     \centering
-    \makebox[\textwidth][c]{\input{figures/K33 on plane}}
+    \makebox[\textwidth][c]{\input{figures/K33_on_plane}}
     \caption{The rhombic strip of the lattice of tubes of $K_{3,3}$ from \Cref{fig:K33 on sphere} on the plane. The leftmost and rightmost chains are the same, indicating the wraparound. Also note that the empty set and the full graph where omitted for visibility. The ranks are indicated by orange lines as in \Cref{fig:K33 on sphere}.}
     \label{fig:K33 on plane}
 \end{figure}
@@ -473,7 +538,7 @@ When $T$ is a star, with the center as root, then any subset of its leaves toget
 \paragraph{Venn diagrams}
 \begin{figure}
     \centering
-    \input{figures/Boolean4 venn}
+    \input{figures/boolean4_venn}
     \caption{A rhombic strip of $\mathcal B_n$ and the corresponding Venn diagram. Each curve of the Venn diagram includes all subsets containing a certain number above it. Orange: 1, Blue: 2, Green: 3, Purple: 4.}
     \label{fig:Boolean4 venn}
 \end{figure}
@@ -485,7 +550,7 @@ The dual of a cyclic rhombic strip of $\mathcal B_n$ has the subsets of $[n]$ as
     % Subfigure 1
     \begin{subfigure}[b]{0.48\textwidth}
         \centering
-        \input{figures/Venn unfolding generalized}
+        \input{figures/Venn_unfolding_generalized}
         \caption{Generalized Venn diagram unfolding}
         \label{fig:venn unfolding generalized}
     \end{subfigure}
@@ -493,7 +558,7 @@ The dual of a cyclic rhombic strip of $\mathcal B_n$ has the subsets of $[n]$ as
     % Subfigure 2
     \begin{subfigure}[b]{0.48\textwidth}
         \centering
-        \input{figures/Venn zigzagging generalized}
+        \input{figures/Venn_zigzagging_generalized}
         \caption{Generalized Venn diagram zigzagging}
         \label{fig:venn zigzagging generalized}
     \end{subfigure}
@@ -514,67 +579,6 @@ They construct a Gray code of such combinations and conjecture that a cyclic Gra
 \paragraph{Venn diagrams for multisets}
 $\mathcal B_n$ for subsets of $[n]$ is the product of $n$ chains of length 1, $C_1\times\ldots\times C_1$, and cyclic rhombic strips of it correspond to simple monotone Venn diagrams. Looking at rhombic strips of more general products of chains, one can show that the edges of their dual graphs partition into cycles as well. Hence, we obtain \defn{generalized Venn diagrams}, whose regions are the multi subsets of some given multiset, see \Cref{fig:combined venn generalized}.
 
-\section{Results}\label{sec:results}
-
-We will first consider the unfolding and zigzagging constructions.
-
-\begin{restatable}[Unfolding]{theorem}{unfolding}\label{thm:unfolding}
-    Let $P$ be a graded poset with 0 and 1 such that $P$ admits a (Hamiltonian) non-cyclic rhombic strip and let $b\in\N$ be given. Then $P\times C_b$ admits a (Hamiltonian) rhombic strip. Furthermore, $P\times C_{1}$ admits a (Hamiltonian) cyclic rhombic strip.
-\end{restatable}
-
-\begin{restatable}[Zigzagging]{theorem}{zigzagging}\label{thm:zigzagging}
-    Let $P$ be a graded poset with 0 and 1 such that $P$ admits a (cyclic) Hamiltonian rhombic strip and let $b\in\N$ be given. Then $P\times C_b$ admits a (cyclic) Hamiltonian rhombic strip.
-\end{restatable}
-
-Using these, we can prove our first main result. The $k$-combinations of a multiset admit cyclic Gray codes if at least one element of the multiset appears an odd number of times. This follows from the constructions above because the $k$-combinations appear as rank $k$ in a product of chains:
-
-\begin{restatable}[Multiset Combinations]{corollary}{multisetcombinations}\label{thm:multiset combinations}
-    The $k$-combinations of the multiset $\{1^{(b_1)},\ldots,n^{(b_n)}\}$ admit a cyclic Gray code under single replacements if at least one $b_i$ is odd and $n\ge 3$.
-\end{restatable}
-
-\begin{restatable}[Weak Bruhat Order(\cite{fixedinversions})]{corollary}{weakBruhat}\label{thm:bruhat}
-    For any given $k$, the SJT Gray code for permutations of $[n]$ restricts to Gray codes on the set of permutations with exactly $k$ inversions such that adjacent permutations differ in two adjacent transpositions.
-\end{restatable}
-
-Next, we combine the two constructions to obtain a vastly more powerful tool:
-
-\begin{restatable}[Cartesian Products]{theorem}{products}\label{thm:products}
-    Let $P$ and $Q$ be graded posets with 0 and 1. Assume that $Q$ admits a rhombic strip and $P$ admits a (cyclic) Hamiltonian rhombic strip. Then $P\times Q$ admits a (cyclic) rhombic strip. If the rhombic strip of $Q$ is Hamiltonian, then $P\times Q$ admits a (cyclic) Hamiltonian rhombic strip.
-\end{restatable}
-Note that both unfolding and zigzagging are special cases of the product construction: $P=C_b$ yields unfolding and $Q=C_b$ yields zigzagging.
-
-This tool allows us to prove some strong theorems. First, we obtain rhombic strips for distributed lattices of tree posets. This follows from the theorem above because $P_r(T)$ is a product of the corresponding lattices of its subtrees at $r$:
-
-\begin{restatable}[Rhombic Strips for Tree Associahedra]{corollary}{treeassociahedrars}\label{thm:tree associahedra rs}
-    Let $T$ be a tree with root $r$ and let the vertices of $T$ be ordered according to a depth first search (DFS). Then there exists a Hamiltonian rhombic strip of $P_r(T)$ whose left boundary is associated to the depth first search order that is given.
-\end{restatable}
-
-Such a rhombic strip then induces a path on the graph associahedron of the base tree. This path visits all subtrees containing $r$ in a continuous arc. After flipping down, see \Cref{fig:tree flipping down}, we are in a position to apply induction:
-
-\begin{figure}
-    \centering
-    \input{figures/tree flipping down}
-    \caption{After visiting all tubes of a tree $T$ containing its root $r$, we flip the tubes in order of ascending size and obtain nested tubings of all subtrees. In purple, the result from flipping down again in each principal subtree (the bottom-up tubing).}
-    \label{fig:tree flipping down}
-\end{figure}
-
-\begin{restatable}[Facet-Hamiltonian Cycles for Tree Associahedra]{corollary}{treeassociahedrafh}\label{thm:tree associahedra fh}
-    Let $T$ be a tree with root $r$ and any DFS ordering of its vertices. Let $t$ be the nested tubing of $T$ which agrees with this DFS ordering. Then $\mathcal{A}(T)$ admits a facet-Hamiltonian path starting in $t$ which can be closed to a facet-Hamiltonian cycle.
-\end{restatable}
-
-Because the rhombic strips we obtain are Hamiltonian, they induce a Gray code for the subtrees of the base tree:
-
-\begin{restatable}[Gray Codes for Subtrees]{corollary}{subtreecodes}\label{thm:subtree gray code}
-   Let $T$ be a rooted tree with $n$ vertices, and let $k\le n$. Then there exists a Gray code of the rooted subtrees of $T$ such that adjacent subtrees differ in a single vertex (which must be a leaf of one of the subtrees). Furthermore, this code restricts to Gray codes on the subtrees with precisely $k$ vertices such that the vertex sets of adjacent subtrees have symmetric difference of size 2. In other words, the flip operation moves exactly one leaf to a new location.
-\end{restatable}
-
-% \begin{restatable}{corollary}{tree permutation languages}\label{thm:tree associahedra}
-%     Given a permutation language $L\subset S_n$ such that there exists a rooted tree $T$ such that 
-%     \[
-%         L=\{\pi\in S_n\mid\text{ All prefixes of }\pi\text{ induce rooted subtrees of }T\}.
-%     \]
-%     Then there exists an adjacent transposition Gray code for $L$.
-% \end{restatable}
 
 
 \section{Proofs}\label{sec:proofs}
@@ -744,21 +748,21 @@ down along the connecting edges yields a $c$-monotone Hamilton cycle of $R$.
 
 \begin{figure}[!ht]
     \centering
-    \input{figures/complete binary tree depth 2 rs}
+    \input{figures/complete_binary_tree_depth_2_rs}
     \caption{A rhombic strip for the subtrees of a complete binary tree as obtained in the proof of \Cref{thm:products}. The $c$-monotone Hamilton path is drawn in blue.}
     \label{fig:complete binary tree rs}
 \end{figure}
 
  \begin{figure}[!ht]
      \centering
-     \input{figures/tree flipping up}
+     \input{figures/tree_flipping_up}
      \caption{Flipping the bottom up tubing of a given tree to the nested tubing coming from a given DFS ordering.}
      \label{fig:tree flipping up}
  \end{figure}
 
  \begin{figure}[!ht]
     \centering
-    \input{figures/fh path for complete binary tree rs}
+    \input{figures/fh_path_for_complete_binary_tree_rs}
     \caption{A facet-Hamiltonian path on the graph associahedron of a complete binary tree. The blue section is obtained via the rhombic strip seen in \Cref{fig:complete binary tree rs}. Flipping the tubes in order of ascending size yields nested tubings on the subtrees, see the orange part. In the green part we apply induction on the two subtrees. We end in the bottom-up tubing in purple.}
     \label{fig:fh for complete binary}
 \end{figure}
@@ -836,14 +840,14 @@ restrict the dimension of the lattice, i.e., the width of the poset.
 
 \begin{figure}[ht]
     \centering
-    \input{figures/8 node tree rs}
+    \input{figures/8_node_tree_rs}
     \caption{A rhombic strip for the subtrees of a tree as obtained in the proof of \Cref{thm:products}. The $c$-monotone Hamilton path is drawn in blue.}
     \label{fig:8 node tree rs}
 \end{figure}
 
 \begin{figure}[ht]
     \centering
-    \input{figures/10 node tree rs}
+    \input{figures/10_node_tree_rs}
     \caption{A rhombic strip for the subtrees of a tree as obtained in the proof of \Cref{thm:products}. The $c$-monotone Hamilton path is drawn in blue.}
     \label{fig:10 node tree rs}
 \end{figure}
@@ -865,7 +869,7 @@ Note that a cyclic rhombic strip of $P$ contains a non-cyclic rhombic strip of $
 
 \begin{figure}
     \centering
-    \input{figures/atomic plane}
+    \input{figures/atomic_plane}
     \caption{An unsplittable (non-cyclic) rhombic strip in the plane. The orange rhombi are blocked, because none of their edges lead to a rhombus of higher rank. The green rhombi are blocked because all their edges either lead to a rhombus of the same or smaller rank, or to an already blocked rhombus. By identifying (glueing) $A,B$ and $C$, we obtain an atomic cyclic rhombic strip.}
     \label{fig:atomic plane}
 \end{figure}
