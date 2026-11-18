@@ -1,0 +1,50 @@
+
+\begin{tikzpicture}
+% The Hamilton cycle H of the grid lemma for a = b = c = 3, layer by layer,
+% and the path P for even b (b = 4, c = 2).
+\def\bb{3}\def\cc{3}\pgfmathtruncatemacro\cm{\cc-1}
+
+\newcommand{\grid}[2]{% light grid of C_#1 x C_#2
+  \foreach \y in {1,...,#1} \foreach \z in {0,...,#2} \draw[gray!45] (\y-1,\z) -- (\y,\z);
+  \foreach \y in {0,...,#1} \foreach \z in {1,...,#2} \draw[gray!45] (\y,\z-1) -- (\y,\z);}
+\newcommand{\vertices}[2]{\foreach \y in {0,...,#1} \foreach \z in {0,...,#2} \fill (\y,\z) circle (1.5pt);}
+\newcommand{\shadeK}{\fill[gray!15] (1,0) rectangle (\bb,\cm);}
+\tikzset{ham/.style={Blue,very thick,-{Latex[length=2mm]}},
+         vert/.style={draw=black,fill=white,thick,circle,inner sep=1.6pt}}
+% the pieces of H in grid coordinates
+\def\Pfw{(0,0) (0,1) (0,2) (0,3) (1,3) (1,2) (1,1) (1,0) (2,0) (2,1) (2,2) (2,3) (3,3) (3,2) (3,1) (3,0)}
+\def\Pbw{(3,0) (3,1) (3,2) (3,3) (2,3) (2,2) (2,1) (2,0) (1,0) (1,1) (1,2) (1,3) (0,3) (0,2) (0,1) (0,0)}
+\def\Sfw{(1,2) (1,1) (1,0) (2,0) (2,1) (2,2) (3,2) (3,1) (3,0)}
+\def\Sbw{(3,0) (3,1) (3,2) (2,2) (2,1) (2,0) (1,0) (1,1) (1,2)}
+\def\Lfw{(0,0) (0,1) (0,2) (0,3) (1,3) (2,3) (3,3)}
+\def\Lbw{(3,3) (2,3) (1,3) (0,3) (0,2) (0,1) (0,0)}
+
+\foreach \X/\first/\second/\up/\down in {0/\Pfw//3/0, 1/\Sbw/\Lbw/1/0, 2/\Sfw/\Lfw/3/3, 3/\Pbw///0}{
+  \begin{scope}[xshift=\X*2.55cm,scale=0.55]
+    \ifnum\X=1 \shadeK\fi \ifnum\X=2 \shadeK\fi
+    \grid{\bb}{\cc}
+    \draw[ham] plot coordinates {\first};
+    \ifx\second\empty\else \draw[ham] plot coordinates {\second}; \fi
+    \vertices{\bb}{\cc}
+    \node at (1.5,-1.1) {$z=\X$};
+  \end{scope}}
+
+% vertices at which H uses a vertical edge; the two ends of each such edge share a color
+\newcommand{\vmark}[4]{\node[vert,fill=#4] at ($(#1*2.55cm,0)+0.55*(#2,#3)$) {};}
+\vmark{0}{3}{0}{Orange}    \vmark{1}{3}{0}{Orange}     % up at (b,0)
+\vmark{1}{1}{2}{Green}     \vmark{2}{1}{2}{Green}      % up at the start of sigma
+\vmark{2}{3}{0}{Black} \vmark{3}{3}{0}{Black}  % up at (b,0)
+\vmark{3}{0}{0}{Purple}    \vmark{2}{0}{0}{Purple}     % down at (0,0)
+\vmark{2}{3}{3}{SkyBlue}   \vmark{1}{3}{3}{SkyBlue}    % down at (b,c)
+\vmark{1}{0}{0}{Yellow}    \vmark{0}{0}{0}{Yellow}     % down at (0,0)
+\node[below left] at (0,0) {\scriptsize $(0,0,0)$};
+
+% P for even b: zigzag through columns 0,...,b-2, then the last two columns row by row
+\begin{scope}[xshift=11.1cm,scale=0.55]
+  \grid{4}{2}
+  \draw[ham] plot coordinates {(0,0) (0,1) (0,2) (1,2) (1,1) (1,0) (2,0) (2,1) (2,2)
+    (3,2) (4,2) (4,1) (3,1) (3,0) (4,0)};
+  \vertices{4}{2}
+  \node at (2,-1.1) {$\pi$ for $a=4$, $b=2$};
+\end{scope}
+\end{tikzpicture}

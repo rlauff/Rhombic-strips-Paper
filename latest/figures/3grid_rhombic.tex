@@ -1,62 +1,85 @@
 
 \begin{tikzpicture}
-\def\hamcycle{0/0,1/0,2/0,3/0,3/1,3/2,2/2,2/1,1/1,1/2,0/2,0/1}
+% Q = C_b x C_c with elements (y,z); K = [1,b] x [0,c-1]; layers x = 0,...,a
+\def\bb{3}\def\cc{3}\def\aa{3}
+\pgfmathtruncatemacro\bm{\bb-1}\pgfmathtruncatemacro\cm{\cc-1}\pgfmathtruncatemacro\am{\aa-1}
+\def\off{0.14}% offset of the cycles B (outside) and B' (inside, away from K)
+
+% all commands draw in grid coordinates (y,z) of the current scope
+\newcommand{\Qedges}[1]{% all cover relations of Q
+  \foreach \y in {1,...,\bb} \foreach \z in {0,...,\cc} \draw[#1] (\y-1,\z) -- (\y,\z);
+  \foreach \y in {0,...,\bb} \foreach \z in {1,...,\cc} \draw[#1] (\y,\z-1) -- (\y,\z);}
+\newcommand{\Kedges}[1]{% all cover relations of K
+  \foreach \y in {1,...,\bm} \foreach \z in {0,...,\cm} \draw[#1] (\y,\z) -- (\y+1,\z);
+  \foreach \y in {1,...,\bb} \foreach \z in {1,...,\cm} \draw[#1] (\y,\z-1) -- (\y,\z);}
+\newcommand{\cycleA}[1]{\draw[#1] (0,0) -- (\bb,0) -- (\bb,\cc) -- (0,\cc) -- cycle;}
+\newcommand{\cycleB}[1]{\draw[#1] (0,0) -- (1,0) -- (1,\cm) -- (\bb,\cm) -- (\bb,\cc) -- (0,\cc) -- cycle;}
+% the cycles drawn next to the grid lines: B slightly outside, B' slightly inside
+\newcommand{\haloA}{\draw[Blue,line width=1.2pt] (-\off,-\off) rectangle (\bb+\off,\cc+\off);}
+\newcommand{\haloB}{\draw[Orange,line width=1.2pt] (\off,\off) -- (1-\off,\off) -- (1-\off,\cm+\off)
+  -- (\bb-\off,\cm+\off) -- (\bb-\off,\cc-\off) -- (\off,\cc-\off) -- cycle;}
+\newcommand{\shadeK}{\fill[gray!15] (1,0) -- (\bb,0) -- (\bb,\cm) -- (1,\cm) -- cycle;}
+\newcommand{\vertices}[1]{\foreach \y in {0,...,\bb} \foreach \z in {0,...,\cc} \fill (\y,\z) circle (#1);}
+% vertical edges from the current layer to the next one, along B resp. B'
+\newcommand{\vertA}[1]{
+  \foreach \y in {0,...,\bb} {\draw[#1] (\y,0) -- ++(0,0,1); \draw[#1] (\y,\cc) -- ++(0,0,1);}
+  \foreach \z in {1,...,\cm} {\draw[#1] (0,\z) -- ++(0,0,1); \draw[#1] (\bb,\z) -- ++(0,0,1);}}
+\newcommand{\vertB}[1]{
+  \foreach \z in {0,...,\cc} \draw[#1] (0,\z) -- ++(0,0,1);
+  \foreach \y in {1,...,\bb} \draw[#1] (\y,\cc) -- ++(0,0,1);
+  \foreach \z in {0,...,\cm} \draw[#1] (1,\z) -- ++(0,0,1);
+  \foreach \y in {2,...,\bb} \draw[#1] (\y,\cm) -- ++(0,0,1);}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Left panel: Hamilton cycle F on C_{b1} x C_{b2}
+% Left: the strip in 3d, layers stacked, slightly rotated
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{scope}
-  \foreach \x in {0,...,2} \foreach \y in {0,...,2}
-    \draw[gray!40] (1.2*\x,1.2*\y) -- (1.2*\x+1.2,1.2*\y);
-  \foreach \x in {0,...,3} \foreach \y in {0,...,1}
-    \draw[gray!40] (1.2*\x,1.2*\y) -- (1.2*\x,1.2*\y+1.2);
-  \foreach \x/\y [remember=\x as \px (initially 0), remember=\y as \py (initially 1)]
-      in \hamcycle
-    \draw[Blue,very thick] (1.2*\px,1.2*\py) -- (1.2*\x,1.2*\y);
-  \foreach \x in {0,...,3} \foreach \y in {0,...,2}
-    \fill (1.2*\x,1.2*\y) circle (2pt);
-  \node at (1.8,-0.9) {$C_{3}\times C_{2}$};
+\begin{scope}[x={(0.8cm,0cm)},y={(0.19cm,0.26cm)},z={(0cm,1.3cm)}]
+  \foreach \X in {1,...,\am} {\begin{scope}[shift={(0,0,\X)}] \shadeK \Qedges{gray!35} \end{scope}}
+  \foreach \X in {0,...,\am} {\begin{scope}[shift={(0,0,\X)}]
+    \pgfmathtruncatemacro\odd{mod(\X,2)}
+    \ifnum\odd=0 \vertA{Blue,thick} \else \vertB{Orange,thick} \fi
+  \end{scope}}
+  \foreach \X in {0,...,\aa} {\begin{scope}[shift={(0,0,\X)}]
+    \ifnum\X=0 \Qedges{thick} \else\ifnum\X=\aa \Qedges{thick} \else
+      \cycleA{thick} \cycleB{thick} \Kedges{thick} \fi\fi
+    \vertices{1.2pt}
+  \end{scope}}
+  \node at (1.9,0,-0.55) {$C_3\times C_3\times C_3$};
 \end{scope}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Right panel: F' = (F x [0,b3]) + all z-edges
+% Top right: the grid Q with K and the cycles B, B'
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{scope}[xshift=7.5cm]
-  % oblique projection (x,y,z) -> (1.4x + 0.65y, 0.42y + 1.5z)
-  \newcommand{\pt}[3]{({1.4*(#1)+0.65*(#2)},{0.42*(#2)+1.5*(#3)})}
-
-  % faint grid: all x- and y-edges on each level
-  \foreach \z in {0,...,2}{
-    \foreach \x in {0,...,2} \foreach \y in {0,...,2}
-      \draw[gray!35] \pt{\x}{\y}{\z} -- \pt{\x+1}{\y}{\z};
-    \foreach \x in {0,...,3} \foreach \y in {0,...,1}
-      \draw[gray!35] \pt{\x}{\y}{\z} -- \pt{\x}{\y+1}{\z};
-  }
-
-  % all vertical edges (in F')
-  \foreach \x in {0,...,3} \foreach \y in {0,...,2} \foreach \z in {0,1}
-    \draw[Purple,thick] \pt{\x}{\y}{\z} -- \pt{\x}{\y}{\z+1};
-
-    \draw[Purple,thick] \pt{0}{1}{2} -- \pt{1}{1}{2};
-    \draw[Purple,thick] \pt{1}{0}{2} -- \pt{1}{1}{2};
-    \draw[Purple,thick] \pt{2}{0}{2} -- \pt{2}{1}{2};
-    \draw[Purple,thick] \pt{2}{1}{2} -- \pt{3}{1}{2};
-    \draw[Purple,thick] \pt{0}{1}{0} -- \pt{1}{1}{0};
-    \draw[Purple,thick] \pt{1}{0}{0} -- \pt{1}{1}{0};
-    \draw[Purple,thick] \pt{2}{0}{0} -- \pt{2}{1}{0};
-    \draw[Purple,thick] \pt{2}{1}{0} -- \pt{3}{1}{0};
-
-  % lifted copies of the cycle (in F')
-  \foreach \z in {0,...,2}
-    \foreach \x/\y [remember=\x as \px (initially 0), remember=\y as \py (initially 1)]
-        in \hamcycle
-      \draw[Blue,very thick] \pt{\px}{\py}{\z} -- \pt{\x}{\y}{\z};
-
-  % vertices
-  \foreach \z in {0,...,2} \foreach \x in {0,...,3} \foreach \y in {0,...,2}
-    \fill \pt{\x}{\y}{\z} circle (1.8pt);
-
-  \node at (3.0,-0.9) {$C_3\times C_2\times C_2$};
+\begin{scope}[xshift=4.6cm,yshift=3.1cm,scale=0.55]
+  \shadeK \Qedges{gray!45} \haloA \haloB \vertices{1.5pt}
+  \node at (2,1) [fill=gray!15,inner sep=1pt] {$K$};
+  \node[left] at (-\off,1.5) {$\ell$};
+  \node[below left] at (0,0) {\scriptsize $(0,0)$};
+  \node[above right] at (\bb,\cc) {\scriptsize $(a,b)$};
+  \node[right] at (\bb+0.9,1.5) {$Q=C_3\times C_3$};
+  \draw[Blue,line width=1.2pt] (\bb+6,2.2) -- ++(0.8,0) node[right,black] {$B$};
+  \draw[Orange,line width=1.2pt] (\bb+6,1.3) -- ++(0.8,0) node[right,black] {$B'$};
+  \fill[gray!15] (\bb+6,0.1) rectangle ++(0.8,0.6); \node[right] at (\bb+6.8,0.4) {$K$};
 \end{scope}
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Bottom right: the horizontal edges of each layer
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\foreach \X in {0,...,\aa}{
+  \begin{scope}[xshift=4.6cm+\X*2.55cm,yshift=0.2cm,scale=0.55]
+    \ifnum\X=0 \Qedges{thick} \else\ifnum\X=\aa \Qedges{thick} \else
+      \shadeK \Qedges{gray!45} \cycleA{thick} \cycleB{thick} \Kedges{thick}
+    \fi\fi
+    % where the vertical edges attach: towards x-1 and x+1 along one cycle each
+    \pgfmathtruncatemacro\odd{mod(\X,2)}
+    \ifnum\X<\aa \ifnum\odd=0 \haloA \else \haloB \fi \fi
+    \ifnum\X>0 \ifnum\odd=1 \haloA \else \haloB \fi \fi
+    \vertices{1.5pt}
+    \node at (1.5,-1.1) {$z=\X$};
+    % arrow to the next layer, labelled by the cycle along which they are joined
+    \ifnum\X<\aa
+      \ifnum\odd=0 \def\col{Blue}\def\cyc{B}\else\def\col{Orange}\def\cyc{B'}\fi
+      \draw[\col,thick,<->] (\bb+0.4,1.5) -- (\bb+1.25,1.5) node[midway,above] {\small$\cyc$};
+    \fi
+  \end{scope}}
 \end{tikzpicture}

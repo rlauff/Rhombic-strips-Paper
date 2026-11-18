@@ -1,0 +1,99 @@
+\begin{tikzpicture}
+% a=2, b=4, c=4; same dots, blue paths and paired color markers as 3grid_hamilton.
+\tikzset{mrham/.style={Blue,very thick,-{Latex[length=2mm]}},
+         mrvert/.style={draw=black,fill=white,thick,circle,inner sep=1.6pt},
+         mrflat/.style={Orange,very thick,densely dashed,-{Latex[length=2mm]}}}
+\newcommand{\mrgrid}{%
+  \foreach \x in {1,2} \foreach \y in {0,...,4}
+    \draw[gray!45] (\x-1,\y) -- (\x,\y);
+  \foreach \x in {0,1,2} \foreach \y in {1,...,4}
+    \draw[gray!45] (\x,\y-1) -- (\x,\y);}
+\newcommand{\mrvertices}{%
+  \foreach \x in {0,1,2} \foreach \y in {0,...,4}
+    \fill (\x,\y) circle (1.5pt);}
+\newcommand{\mrranks}[1]{%
+  \foreach \t in {0,...,6} {
+    \pgfmathsetmacro\mrleft{max(-0.15,\t-4.15)}
+    \pgfmathsetmacro\mrright{min(2.15,\t+0.15)}
+    \pgfmathtruncatemacro\mrrank{\t+#1}
+    \draw[gray!65,line width=0.25pt]
+      (\mrleft,\t-\mrleft) -- (\mrright,\t-\mrright)
+      node[below right,gray!65,font=\tiny,inner sep=1pt] {$k=\mrrank$};}}
+\newcommand{\mrshade}{\fill[gray!15] (1,0) rectangle (2,3);}
+\newcommand{\mrmark}[4]{%
+  \node[mrvert,fill=#4] at ($(#1*3.0cm,0)+0.7*(#2,#3)$) {};}
+\def\mrP{(0,0) (0,1) (0,2) (0,3) (0,4) (1,4) (2,4)
+  (2,3) (1,3) (1,2) (2,2) (2,1) (1,1) (1,0) (2,0)}
+\def\mrSf{(1,0) (1,1) (1,2) (1,3) (2,3) (2,2) (2,1) (2,0)}
+\def\mrSb{(2,0) (2,1) (2,2) (2,3) (1,3) (1,2) (1,1) (1,0)}
+\def\mrLf{(0,0) (0,1) (0,2) (0,3) (0,4) (1,4) (2,4)}
+\def\mrLb{(2,4) (1,4) (0,4) (0,3) (0,2) (0,1) (0,0)}
+
+\begin{scope}[scale=0.7]
+  \mrranks{0}\mrgrid
+  \draw[mrham] plot coordinates {\mrP};
+  \mrvertices
+  \node at (1,-1) {$z=0$};
+  \node[above,font=\footnotesize] at (1,4.6) {$Q=C_2\times C_4$};
+  \node[fill=white,inner sep=1pt] at (1.5,2.5) {$\pi$};
+  \node[below left,font=\scriptsize] at (0,0) {$(0,0,0)$};
+\end{scope}
+\begin{scope}[xshift=3.0cm,scale=0.7]
+  \mrshade\mrranks{1}\mrgrid
+  \draw[mrham] plot coordinates {\mrSb};
+  \draw[mrham] plot coordinates {\mrLb};
+  \mrvertices
+  \node at (1,-1) {$z=1$};
+  \node[fill=gray!15,inner sep=1pt] at (1.5,1.5) {$\sigma$};
+  \node[fill=gray!15,inner sep=1pt,font=\scriptsize] at (1.5,2.5) {$K$};
+  \node[left,fill=white,inner sep=1pt] at (-0.25,2) {$\ell$};
+\end{scope}
+\begin{scope}[xshift=6.0cm,scale=0.7]
+  \mrshade\mrranks{2}\mrgrid
+  \draw[mrham] plot coordinates {\mrSf};
+  \draw[mrham] plot coordinates {\mrLf};
+  \mrvertices
+  \node at (1,-1) {$z=2$};
+  \node[fill=gray!15,inner sep=1pt] at (1.5,1.5) {$\sigma$};
+  \node[fill=gray!15,inner sep=1pt,font=\scriptsize] at (1.5,2.5) {$K$};
+\end{scope}
+\begin{scope}[xshift=9.0cm,scale=0.7]
+  \mrshade\mrranks{3}\mrgrid
+  \draw[mrham] plot coordinates {(2,0) (2,1) (2,2) (2,3)};
+  \draw[mrham] plot coordinates {(1,3) (1,2) (1,1) (1,0)};
+  \draw[mrham] plot coordinates {\mrLb};
+  \mrvertices
+  \node at (1,-1) {$z=3$};
+  \node[fill=gray!15,inner sep=1pt] at (1.5,1.5) {$W$};
+  \node[fill=gray!15,inner sep=1pt,font=\scriptsize] at (1.5,2.5) {$K$};
+\end{scope}
+\begin{scope}[xshift=12.0cm,scale=0.7]
+  \mrshade\mrranks{4}\mrgrid
+  \draw[mrham] plot coordinates {(2,3) (2,2) (2,1) (2,0) (1,0) (1,1) (1,2) (1,3)};
+  \draw[mrham] plot coordinates {\mrLf};
+  \mrvertices
+  \node at (1,-1) {$z=4$};
+  \node[fill=gray!15,inner sep=1pt] at (1.5,1.5) {$W$};
+  \node[fill=gray!15,inner sep=1pt,font=\scriptsize] at (1.5,2.5) {$K$};
+  \node[left,fill=white,inner sep=1pt] at (-0.25,2) {$\ell$};
+\end{scope}
+
+% Vertical edges: matching filled circles identify their two ends.
+\mrmark{0}{2}{0}{Orange}\mrmark{1}{2}{0}{Orange}
+\mrmark{1}{1}{0}{Green}\mrmark{2}{1}{0}{Green}
+\mrmark{2}{2}{0}{Vermilion}\mrmark{3}{2}{0}{Vermilion}
+\mrmark{3}{2}{3}{Purple}\mrmark{4}{2}{3}{Purple}
+\mrmark{4}{1}{3}{SkyBlue}\mrmark{3}{1}{3}{SkyBlue}
+\mrmark{4}{2}{4}{Black}\mrmark{3}{2}{4}{Black}
+\mrmark{3}{0}{0}{Yellow}\mrmark{2}{0}{0}{Yellow}
+\mrmark{2}{2}{4}{Blue}\mrmark{1}{2}{4}{Blue}
+\mrmark{1}{0}{0}{gray!60}\mrmark{0}{0}{0}{gray!60}
+
+% The same-rank step, distinguished from the vertical color pairs by open circles.
+\node[mrvert,draw=Orange] at (9.7,0) {};
+\node[mrvert,draw=Orange] at (12.0,0) {};
+\draw[mrflat] (9.83,-0.12) -- (10.4,-0.5) -- (10.4,-1.08)
+  -- (12.0,-1.08) -- (12.0,-0.16);
+\node[below,fill=white,inner sep=2pt,font=\scriptsize] at (11.2,-1.08)
+  {$(1,0,3)-(0,0,4)$};
+\end{tikzpicture}

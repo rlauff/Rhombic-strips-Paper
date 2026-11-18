@@ -1,0 +1,36 @@
+
+\begin{tikzpicture}
+% The gadget: the pillars above consecutive elements x_1 < x_2 of P' (x_2 covers x_1) traversed as one unit.
+% (x_1,j) is drawn at height j, (x_2,j) at height j+1, so that heights are ranks.
+\def\w{1.8}
+\tikzset{ham/.style={Blue,very thick,-{Latex[length=2mm]}},
+         unit/.style={draw=black,fill=white,thick,circle,inner sep=1.6pt}}
+\newcommand{\pillars}[1]{% faint cover relations of the two pillars of height #1
+  \foreach \j in {1,...,#1} {\draw[gray!45] (0,\j-1) -- (0,\j); \draw[gray!45] (\w,\j) -- (\w,\j+1);}
+  \foreach \j in {0,...,#1} {\draw[gray!45] (0,\j) -- (\w,\j+1); \fill (0,\j) circle (1.5pt); \fill (\w,\j+1) circle (1.5pt);}
+  \node[below] at (0,-0.1) {\small $x_1$}; \node[below] at (\w,-0.1) {\small $x_2$};}
+
+% b_n even, here 4: rows from the top, alternating
+\begin{scope}[scale=0.6]
+  \pillars{4}
+  \draw[ham] plot coordinates {(0,4) (\w,5) (\w,4) (0,3) (0,2) (\w,3) (\w,2) (0,1) (0,0) (\w,1)};
+  \node[unit] at (0,4) {}; \node[unit] at (\w,1) {};
+  \node at (0.9,-1.4) {$b_n=4$};
+\end{scope}
+
+% b_n odd, here 3: one same-rank jump from (x_1,2) to (x_2,1)
+\begin{scope}[xshift=3.2cm,scale=0.6]
+  \pillars{3}
+  \draw[ham] plot coordinates {(0,3) (\w,4) (\w,3) (0,2) (\w,2) (0,1) (0,0) (\w,1)};
+  \node[unit] at (0,3) {}; \node[unit] at (\w,1) {};
+  \node at (0.9,-1.4) {$b_n=3$};
+\end{scope}
+
+% b_n = 1: upwards, with one jump
+\begin{scope}[xshift=6.4cm,scale=0.6]
+  \pillars{1}
+  \draw[ham] plot coordinates {(0,0) (0,1) (\w,1) (\w,2)};
+  \node[unit] at (0,0) {}; \node[unit] at (\w,2) {};
+  \node at (0.9,-1.4) {$b_n=1$};
+\end{scope}
+\end{tikzpicture}

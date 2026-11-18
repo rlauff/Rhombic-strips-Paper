@@ -451,6 +451,78 @@
       \field{pages}{51\bibrangedash 56}
       \range{pages}{6}
     \endentry
+    \entry{Venn1880}{article}{}{}
+      \name{author}{1}{}{%
+        {{hash=9097f88f815b3c8648826f1b7d8a588c}{%
+           family={Venn},
+           familyi={V\bibinitperiod},
+           given={John},
+           giveni={J\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Taylor & Francis}%
+      }
+      \strng{namehash}{9097f88f815b3c8648826f1b7d8a588c}
+      \strng{fullhash}{9097f88f815b3c8648826f1b7d8a588c}
+      \strng{fullhashraw}{9097f88f815b3c8648826f1b7d8a588c}
+      \strng{bibnamehash}{9097f88f815b3c8648826f1b7d8a588c}
+      \strng{authorbibnamehash}{9097f88f815b3c8648826f1b7d8a588c}
+      \strng{authornamehash}{9097f88f815b3c8648826f1b7d8a588c}
+      \strng{authorfullhash}{9097f88f815b3c8648826f1b7d8a588c}
+      \strng{authorfullhashraw}{9097f88f815b3c8648826f1b7d8a588c}
+      \field{labelalpha}{Ven80}
+      \field{sortinit}{7}
+      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{The London, Edinburgh, and Dublin Philosophical Magazine and Journal of Science}
+      \field{number}{59}
+      \field{title}{I. {On} the Diagrammatic and Mechanical Representation of Propositions and Reasonings}
+      \field{volume}{10}
+      \field{year}{1880}
+      \field{pages}{1\bibrangedash 18}
+      \range{pages}{18}
+      \verb{doi}
+      \verb 10.1080/14786448008626877
+      \endverb
+    \endentry
+    \entry{restrictedinversions}{article}{}{}
+      \name{author}{2}{}{%
+        {{hash=97aad0e4314a252326f4b093acf21d67}{%
+           family={Vajnovszki},
+           familyi={V\bibinitperiod},
+           given={Vincent},
+           giveni={V\bibinitperiod}}}%
+        {{hash=16d9322c380178f0da792212b736e315}{%
+           family={Vernay},
+           familyi={V\bibinitperiod},
+           given={Rémi},
+           giveni={R\bibinitperiod}}}%
+      }
+      \strng{namehash}{01679233d0320f567158ef0864da8ad6}
+      \strng{fullhash}{01679233d0320f567158ef0864da8ad6}
+      \strng{fullhashraw}{01679233d0320f567158ef0864da8ad6}
+      \strng{bibnamehash}{01679233d0320f567158ef0864da8ad6}
+      \strng{authorbibnamehash}{01679233d0320f567158ef0864da8ad6}
+      \strng{authornamehash}{01679233d0320f567158ef0864da8ad6}
+      \strng{authorfullhash}{01679233d0320f567158ef0864da8ad6}
+      \strng{authorfullhashraw}{01679233d0320f567158ef0864da8ad6}
+      \field{labelalpha}{VV11}
+      \field{sortinit}{8}
+      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Information Processing Letters}
+      \field{number}{13}
+      \field{title}{Restricted compositions and permutations: From old to new {Gray} codes}
+      \field{volume}{111}
+      \field{year}{2011}
+      \field{pages}{650\bibrangedash 655}
+      \range{pages}{6}
+      \verb{doi}
+      \verb 10.1016/j.ipl.2011.03.022
+      \endverb
+    \endentry
     \entry{fixedinversions}{article}{}{}
       \name{author}{2}{}{%
         {{hash=64ecac088899f778a8ec5ca2707c9fc9}{%
@@ -476,8 +548,8 @@
       \strng{authorfullhash}{74fe343d5e1090d8e442b575ec9324c7}
       \strng{authorfullhashraw}{74fe343d5e1090d8e442b575ec9324c7}
       \field{labelalpha}{ER03}
-      \field{sortinit}{7}
-      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{issn}{0020-0190}
@@ -490,6 +562,43 @@
       \range{pages}{6}
       \verb{doi}
       \verb 10.1016/S0020-0190(02)00481-7
+      \endverb
+    \endentry
+    \entry{forestideals}{article}{}{}
+      \name{author}{2}{}{%
+        {{hash=a97f5fd8ca2f2283d0f2b887da826ca2}{%
+           family={Koda},
+           familyi={K\bibinitperiod},
+           given={Yasunori},
+           giveni={Y\bibinitperiod}}}%
+        {{hash=d451a3d41bdcb4e05dea10530db80d68}{%
+           family={Ruskey},
+           familyi={R\bibinitperiod},
+           given={Frank},
+           giveni={F\bibinitperiod}}}%
+      }
+      \strng{namehash}{5e728a20d777a8cc0ab7cacdc48b394f}
+      \strng{fullhash}{5e728a20d777a8cc0ab7cacdc48b394f}
+      \strng{fullhashraw}{5e728a20d777a8cc0ab7cacdc48b394f}
+      \strng{bibnamehash}{5e728a20d777a8cc0ab7cacdc48b394f}
+      \strng{authorbibnamehash}{5e728a20d777a8cc0ab7cacdc48b394f}
+      \strng{authornamehash}{5e728a20d777a8cc0ab7cacdc48b394f}
+      \strng{authorfullhash}{5e728a20d777a8cc0ab7cacdc48b394f}
+      \strng{authorfullhashraw}{5e728a20d777a8cc0ab7cacdc48b394f}
+      \field{labelalpha}{KR93}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Journal of Algorithms}
+      \field{number}{2}
+      \field{title}{A {Gray} Code for the Ideals of a Forest Poset}
+      \field{volume}{15}
+      \field{year}{1993}
+      \field{pages}{324\bibrangedash 340}
+      \range{pages}{17}
+      \verb{doi}
+      \verb 10.1006/jagm.1993.1044
       \endverb
     \endentry
     \entry{celebrating_associahedron}{article}{}{}
@@ -519,8 +628,8 @@
       \strng{authorfullhash}{1605a622931fc8362465d4c81c115c38}
       \strng{authorfullhashraw}{1605a622931fc8362465d4c81c115c38}
       \field{labelalpha}{PSZ23}
-      \field{sortinit}{9}
-      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{Arch. Math.}
@@ -1232,8 +1341,8 @@
       \strng{authorfullhash}{e9a8f08de354dbe22818a53f9cda8aa1}
       \strng{authorfullhashraw}{e9a8f08de354dbe22818a53f9cda8aa1}
       \field{labelalpha}{Pos09}
-      \field{sortinit}{1}
-      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{Int. Math. Res. Not.}
@@ -1274,8 +1383,8 @@
       \strng{authorfullhash}{21bcec01fb547242b87d9daf34ae07be}
       \strng{authorfullhashraw}{21bcec01fb547242b87d9daf34ae07be}
       \field{labelalpha}{HLT11}
-      \field{sortinit}{1}
-      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{issn}{0001-8708,1090-2082}
@@ -1555,8 +1664,8 @@
       \strng{authorfullhashraw}{08005d8c479c387cd1d0e05a2a62a3ef}
       \field{extraname}{2}
       \field{labelalpha}{CPV24}
-      \field{sortinit}{2}
-      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{European J. Combin.}
@@ -1596,8 +1705,8 @@
       \strng{authorfullhash}{03b382e246c9bdc0b8494974cf1342f8}
       \strng{authorfullhashraw}{03b382e246c9bdc0b8494974cf1342f8}
       \field{labelalpha}{CLP18}
-      \field{sortinit}{2}
-      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{issue}{4}
@@ -1633,8 +1742,8 @@
       \strng{authorfullhash}{a130c2937139bff52de23af104ea7801}
       \strng{authorfullhashraw}{a130c2937139bff52de23af104ea7801}
       \field{labelalpha}{RS96}
-      \field{sortinit}{2}
-      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{issn}{0195-6698}
@@ -1657,6 +1766,41 @@
     \endentry
   \enddatalist
   \datalist[entry]{ynt/global//global/global/global}
+    \entry{Venn1880}{article}{}{}
+      \name{author}{1}{}{%
+        {{hash=9097f88f815b3c8648826f1b7d8a588c}{%
+           family={Venn},
+           familyi={V\bibinitperiod},
+           given={John},
+           giveni={J\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Taylor & Francis}%
+      }
+      \strng{namehash}{9097f88f815b3c8648826f1b7d8a588c}
+      \strng{fullhash}{9097f88f815b3c8648826f1b7d8a588c}
+      \strng{fullhashraw}{9097f88f815b3c8648826f1b7d8a588c}
+      \strng{bibnamehash}{9097f88f815b3c8648826f1b7d8a588c}
+      \strng{authorbibnamehash}{9097f88f815b3c8648826f1b7d8a588c}
+      \strng{authornamehash}{9097f88f815b3c8648826f1b7d8a588c}
+      \strng{authorfullhash}{9097f88f815b3c8648826f1b7d8a588c}
+      \strng{authorfullhashraw}{9097f88f815b3c8648826f1b7d8a588c}
+      \field{labelalpha}{Ven80}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{The London, Edinburgh, and Dublin Philosophical Magazine and Journal of Science}
+      \field{number}{59}
+      \field{title}{I. {On} the Diagrammatic and Mechanical Representation of Propositions and Reasonings}
+      \field{volume}{10}
+      \field{year}{1880}
+      \field{pages}{1\bibrangedash 18}
+      \range{pages}{18}
+      \verb{doi}
+      \verb 10.1080/14786448008626877
+      \endverb
+    \endentry
     \entry{GrayCode}{misc}{}{}
       \name{author}{1}{}{%
         {{hash=ddeea45f20e48e1742dc5d993c0e3db3}{%
@@ -1911,6 +2055,43 @@
       \range{pages}{10}
       \verb{doi}
       \verb 10.1016/S0195-6698(89)80072-1
+      \endverb
+    \endentry
+    \entry{forestideals}{article}{}{}
+      \name{author}{2}{}{%
+        {{hash=a97f5fd8ca2f2283d0f2b887da826ca2}{%
+           family={Koda},
+           familyi={K\bibinitperiod},
+           given={Yasunori},
+           giveni={Y\bibinitperiod}}}%
+        {{hash=d451a3d41bdcb4e05dea10530db80d68}{%
+           family={Ruskey},
+           familyi={R\bibinitperiod},
+           given={Frank},
+           giveni={F\bibinitperiod}}}%
+      }
+      \strng{namehash}{5e728a20d777a8cc0ab7cacdc48b394f}
+      \strng{fullhash}{5e728a20d777a8cc0ab7cacdc48b394f}
+      \strng{fullhashraw}{5e728a20d777a8cc0ab7cacdc48b394f}
+      \strng{bibnamehash}{5e728a20d777a8cc0ab7cacdc48b394f}
+      \strng{authorbibnamehash}{5e728a20d777a8cc0ab7cacdc48b394f}
+      \strng{authornamehash}{5e728a20d777a8cc0ab7cacdc48b394f}
+      \strng{authorfullhash}{5e728a20d777a8cc0ab7cacdc48b394f}
+      \strng{authorfullhashraw}{5e728a20d777a8cc0ab7cacdc48b394f}
+      \field{labelalpha}{KR93}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Journal of Algorithms}
+      \field{number}{2}
+      \field{title}{A {Gray} Code for the Ideals of a Forest Poset}
+      \field{volume}{15}
+      \field{year}{1993}
+      \field{pages}{324\bibrangedash 340}
+      \range{pages}{17}
+      \verb{doi}
+      \verb 10.1006/jagm.1993.1044
       \endverb
     \endentry
     \entry{Cyclohedra}{article}{}{}
@@ -2363,6 +2544,43 @@
       \field{isbn}{978-0201038040}
       \field{title}{The Art of Computer Programming, Volume 4A: Combinatorial Algorithms, Part 1}
       \field{year}{2011}
+    \endentry
+    \entry{restrictedinversions}{article}{}{}
+      \name{author}{2}{}{%
+        {{hash=97aad0e4314a252326f4b093acf21d67}{%
+           family={Vajnovszki},
+           familyi={V\bibinitperiod},
+           given={Vincent},
+           giveni={V\bibinitperiod}}}%
+        {{hash=16d9322c380178f0da792212b736e315}{%
+           family={Vernay},
+           familyi={V\bibinitperiod},
+           given={Rémi},
+           giveni={R\bibinitperiod}}}%
+      }
+      \strng{namehash}{01679233d0320f567158ef0864da8ad6}
+      \strng{fullhash}{01679233d0320f567158ef0864da8ad6}
+      \strng{fullhashraw}{01679233d0320f567158ef0864da8ad6}
+      \strng{bibnamehash}{01679233d0320f567158ef0864da8ad6}
+      \strng{authorbibnamehash}{01679233d0320f567158ef0864da8ad6}
+      \strng{authornamehash}{01679233d0320f567158ef0864da8ad6}
+      \strng{authorfullhash}{01679233d0320f567158ef0864da8ad6}
+      \strng{authorfullhashraw}{01679233d0320f567158ef0864da8ad6}
+      \field{labelalpha}{VV11}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Information Processing Letters}
+      \field{number}{13}
+      \field{title}{Restricted compositions and permutations: From old to new {Gray} codes}
+      \field{volume}{111}
+      \field{year}{2011}
+      \field{pages}{650\bibrangedash 655}
+      \range{pages}{6}
+      \verb{doi}
+      \verb 10.1016/j.ipl.2011.03.022
+      \endverb
     \endentry
     \entry{watchmanApproximation}{inproceedings}{}{}
       \name{author}{1}{}{%
